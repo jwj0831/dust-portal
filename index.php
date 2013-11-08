@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
 	
 	<!-- Custom styles for this template -->
-    <link href="dust-portal.css" rel="stylesheet">
+    <link href="../css/dust-portal.css" rel="stylesheet">
     
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
