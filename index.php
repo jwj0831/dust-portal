@@ -1,3 +1,12 @@
+<?php
+	$hostname = "localhost";
+	$user_name = "root";
+	$password = "0831";
+	$db_name = "dust";
+	$conn = mysql_connect($hostname, $user_name, $password);
+	mysql_select_db($db_name, $conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,10 +53,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Data</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="http://117.16.146.55/dust-portal">Home</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -58,6 +64,38 @@
       <div class="dust-template">
         <h1>Real-time dust monitoring</h1>
         <p class="lead">연구실 내 실시간 공기질을 모니터링하는 페이지 입니다.</p>
+      </div>
+      
+      <div class="panel panel-default">
+      	<div class="panel-heading">먼지측정 </div>
+      	<div class="panel-body">매 30초마다 먼지센서로부터 값을 받고 있습니다.</div>
+      	
+      	<table class="table">
+      		<thead>
+      			<th>#</th>
+      			<th>Value</th>
+      		</thead>
+      		<tbody>
+      			<?php
+      				$query = "SELECT * FROM dustVal ORDER BY id DESC LIMIT 5";
+					$result = mysql_query($query, $conn);
+					while($row = mysql_fetch_array($result))
+					{ 
+      			?>
+      			
+      			<tr>
+	      			<td>
+	      				<?= $row['id'];  ?>
+	      			</td>
+	      			<td>
+	      				<?= $row['val'];  ?>
+	      			</td>
+      			</tr>
+      			<?php
+					}
+				?>
+      		</tbody>
+      	</table>
       </div>
 
     </div><!-- /.container -->
