@@ -52,9 +52,9 @@
 
     <div class="container">
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      <div class="dust-template">
+        <h1>Real-time dust monitoring</h1>
+        <p class="lead">연구실 내 실시간 공기질을 모니터링하는 페이지 입니다.</p>
       </div>
 
     </div><!-- /.container -->
