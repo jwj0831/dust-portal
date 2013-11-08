@@ -63,12 +63,12 @@
 
       <div class="dust-template">
         <h1>Real-time dust monitoring</h1>
-        <p class="lead">연구실 내 실시간 공기질을 모니터링하는 페이지 입니다.</p>
+        <p class="lead">제 연구실 내 실시간 공기질을 모니터링하는 페이지 입니다.</p>
       </div>
       
       <div class="panel panel-default">
       	<div class="panel-heading">먼지측정 </div>
-      	<div class="panel-body">매 30초마다 먼지센서로부터 값을 받고 있습니다.</div>
+      	<div class="panel-body">매 30초마다 먼지센서로부터 값을 받아 최근 5분 동안의 값을 보여주고 있습니다.</div>
       	
       	<table class="table">
       		<thead>
@@ -77,7 +77,7 @@
       		</thead>
       		<tbody>
       			<?php
-      				$query = "SELECT * FROM dustVal ORDER BY id DESC LIMIT 5";
+      				$query = "SELECT * FROM dustVal ORDER BY id DESC LIMIT 10";
 					$result = mysql_query($query, $conn);
 					while($row = mysql_fetch_array($result))
 					{ 
