@@ -11,7 +11,7 @@ mysql_select_db($db_name, $conn);
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta http-equiv='refresh' content='10;url=http://117.16.146.55/dust-portal'
+		<meta http-equiv='refresh' content='30;url=http://117.16.146.55/dust-portal'
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -46,12 +46,15 @@ mysql_select_db($db_name, $conn);
 		<div class="container">
 
 			<div class="dust-template">
-				<h1>Real-time dust monitoring</h1>
 				<p class="lead">제 연구실 내 실시간 공기질을 모니터링하는 페이지 입니다.</p>
 				
 				<div class="panel panel-default">
 					<div class="panel-heading">먼지 측정 현황</div>
-					<div class="panel-body">매 30초마다 먼지센서로부터 값을 받아 최근 5분 동안의 값을 보여주고 있습니다.</div>
+					<div class="panel-body">
+						30초마다 먼지센서로부터 값을 받아 최근 5분 동안의 값을 보여주고 있습니다.</br>
+						개발과정을 다음을 참조해 주세요</br>
+						a href="http://www.notforme.kr/archives/846">비글본 블랙 : 실내 공기질 모니터링 서버 만들기</a>
+					</div>
 
 					<table class="table">
 						<thead>
@@ -79,7 +82,9 @@ mysql_select_db($db_name, $conn);
 				</div><!-- /.panel -->
 			</div><!-- /.dust-template -->
 		</div><!-- /.container -->
-
+		<footer>
+			<p class="footer">Copyright at NFM in 2013</p>
+		</footer>
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
