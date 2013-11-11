@@ -1,7 +1,8 @@
+th {
+	text-align: center;
+}
 .footer {
-	display:block;
-	margin: 10px 0px;
-	text-align:center;
+	text-align: center;
 }
 
 .dust-template {

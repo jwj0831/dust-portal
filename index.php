@@ -53,7 +53,7 @@ mysql_select_db($db_name, $conn);
 					<div class="panel-body">
 						30초마다 먼지센서로부터 값을 받아 최근 5분 동안의 값을 보여주고 있습니다.</br>
 						개발과정을 다음을 참조해 주세요</br>
-						a href="http://www.notforme.kr/archives/846">비글본 블랙 : 실내 공기질 모니터링 서버 만들기</a>
+						<a href="http://www.notforme.kr/archives/846">비글본 블랙 : 실내 공기질 모니터링 서버 만들기</a>
 					</div>
 
 					<table class="table">
