@@ -69,7 +69,11 @@
       <div class="panel panel-default">
       	<div class="panel-heading">먼지측정 </div>
       	<div class="panel-body">매 30초마다 먼지센서로부터 값을 받아 최근 5분 동안의 값을 보여주고 있습니다.</div>
-      	
+      	<div class="test">
+      		<button type="button" class="btn btn-default btn-lg">
+  				<span class="glyphicon glyphicon-star"></span> Star
+			</button>
+      	</div>
       	<table class="table">
       		<thead>
       			<th>#</th>
