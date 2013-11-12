@@ -14,7 +14,7 @@ if(!is_numeric($group_number)){
 $position = ($group_number * $items_per_group);
 
 //Limit our results within a specified range. 
-$results = $mysqli->query("SELECT id, val FROM dustVal ORDER BY id ASC LIMIT  $position, $items_per_group");
+$results = $mysqli->query("SELECT id, val FROM dustVal ORDER BY id DESC LIMIT  $position, $items_per_group");
 
 if ($results) { 
     //output results from database
