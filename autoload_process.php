@@ -21,7 +21,7 @@ if ($results) {
     
     while($obj = $results->fetch_object())
     {
-        echo '<div class="col-lg"><span class="default-label-info"> '. $row["id"] . '</span> <span class="badge">' . $row["val"] . '</span></div>';
+        echo '<div class="col-lg"><span class="default-label-info"> '. $obj->id . '</span> <span class="badge">' . $obj->val . '</span></div>';
 	}
 
 }
