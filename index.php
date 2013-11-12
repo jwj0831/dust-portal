@@ -105,7 +105,7 @@ $results -> close();
 				var loading  = false; //to prevents multipal ajax loads
 				var total_groups = <?php echo $total_groups; ?>;//total record group(s)
 
-				$('#results').load("autoload_process.php", {'page' : track_load}, function() {track_load++;}); //load first group
+				$('#results').load("autoload_process.php", {'group_no' : track_load}, function() {track_load++;}); //load first group
 
 				$(window).scroll(function() {//detect page scroll
 					if ($(window).scrollTop() + $(window).height() == $(document).height())//user scrolled to bottom of the page?

@@ -1,7 +1,7 @@
 <?php
 include("config.inc.php"); //include config file
 
-//sanitize post value
+//sanitize post value						 
 $group_number = filter_var($_POST["group_no"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
 
 //throw HTTP error if group number is not valid
