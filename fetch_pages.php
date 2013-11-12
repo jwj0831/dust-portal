@@ -18,7 +18,7 @@ $results = mysqli_query($conn, "SELECT id, val FROM dustVal ORDER BY id DESC LIM
 
 //output results from database
 while ($row = mysqli_fetch_array($results)) {
-	echo '<div class="col-lg"><span class="default-label-info"> '. $row["id"] . '"</span> <span class="badge">' . $row["val"] . '</span></div>';
+	echo '<div class="col-lg"><span class="default-label-info"> '. $row["id"] . '</span> <span class="badge">' . $row["val"] . '</span></div>';
 }
 ?>
 
