@@ -14,7 +14,7 @@ if (!is_numeric($page_number)) {
 $position = ($page_number * $item_per_page);
 
 //Limit our results within a specified range.
-$results = mysqli_query($connecDB, "SELECT id, val FROM dustVal ORDER BY id DESC LIMIT $position, $item_per_page");
+$results = mysqli_query($conn, "SELECT id, val FROM dustVal ORDER BY id DESC LIMIT $position, $item_per_page");
 
 //output results from database
 echo '<div class="col-md-4 page_result">';

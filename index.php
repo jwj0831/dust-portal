@@ -78,7 +78,7 @@ $total_pages = ceil($get_total_rows[0] / $item_per_page);
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 		
-				<script>
+		<script>
 			$(document).ready(function() {
 
     			var track_click = 0; //track user click on "load more" button, righ now it is 0 click
