@@ -1,7 +1,7 @@
 <?php 
 include ("config.inc.php");
 
-$result = mysqli_query($conn, "SELECT COUNT(*), FROM dustVal");
+$result = mysqli_query($conn, "SELECT COUNT(*) FROM dustVal");
 $get_total_rows = mysqli_fetch_array($result);
 
 $total_pages = ceil($get_total_rows[0] / $item_per_page);
