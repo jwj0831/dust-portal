@@ -1,12 +1,18 @@
-<?php 
+<?php
 include ("config.inc.php");
 
-$result = mysqli_query($conn, "SELECT COUNT(*) FROM dustVal");
-$get_total_rows = mysqli_fetch_array($result);
+$results = $mysqli -> query("SELECT COUNT(*) as t_records FROM dustVal");
+$total_records = $results -> fetch_object();
+$total_groups = ceil($total_records -> t_records / $items_per_group);
+$results -> close();
 
-$total_pages = ceil($get_total_rows[0] / $item_per_page);
+/*
+ $result = mysqli_query($conn, "SELECT COUNT(*) FROM dustVal");
+ $get_total_rows = mysqli_fetch_array($result);
+
+ $total_pages = ceil($get_total_rows[0] / $item_per_page);
+ */
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +35,7 @@ $total_pages = ceil($get_total_rows[0] / $item_per_page);
 
 		<!-- Custom styles for this template -->
 		<link rel="stylesheet" href="./css/dust-portal.css" >
-	
+
 		<!-- Just for debugging purposes. Don't actually copy this line! -->
 		<!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -48,82 +54,91 @@ $total_pages = ceil($get_total_rows[0] / $item_per_page);
 		<div class="container">
 
 			<div class="dust-template">
-				<p class="lead">제 연구실 내 실시간 공기질을 모니터링하는 페이지 입니다.</p>
-				
+				<p class="lead">
+					제 연구실 내 실시간 공기질을 모니터링하는 페이지 입니다.
+				</p>
+
 				<div class="panel panel-default">
-					<div class="panel-heading">먼지 측정 현황</div>
+					<div class="panel-heading">
+						먼지 측정 현황
+					</div>
 					<div class="panel-body">
 						30초마다 먼지센서로부터 값을 받아서 보여주고 있습니다.</br>
 						개발과정 다음을 참조해 주세요</br>
 						<a href="http://www.notforme.kr/archives/846">비글본 블랙 : 실내 공기질 모니터링 서버 만들기</a>
 					</div>
 
-
+					
+					<div id="results">
+					</div>
+					<div class="animation_image" style="display:none" align="center">
+						<img src="ajax-loader.gif">
+					</div>
+															
+					<!--
 					<div id="results"></div>
 					<div align="center">
-						<button class="load_more" id="load_more_button">load More</button>
-						<div class="animation_image" style="display:none;"><img src="ajax-loader.gif"> Loading...</div>
+						<button class="load_more" id="load_more_button">
+							load More
+						</button>
+						<div class="animation_image" style="display:none;"><img src="ajax-loader.gif"> Loading...
+						</div>
 					</div>
-
-					
+					-->
 				</div><!-- /.panel -->
 			</div><!-- /.dust-template -->
 		</div><!-- /.container -->
 		<footer>
-			<p class="footer">Copyright at NFM in 2013</p>
+			<p class="footer">
+				Copyright at NFM in 2013
+			</p>
 		</footer>
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
-		
+
 		<script>
 			$(document).ready(function() {
+				var track_load = 0; //total loaded record group(s)
+				var loading  = false; //to prevents multipal ajax loads
+				var total_groups = <?php echo $total_groups; ?>;//total record group(s)
 
-    			var track_click = 0; //track user click on "load more" button, righ now it is 0 click
-    
-    			var total_pages = <?php echo $total_pages; ?>;
+				$('#results').load("autoload_process.php", {'page' : track_load}, function() {track_load++;}); //load first group
 
-				$('#results').load("fetch_pages.php", {'page' : track_click}, function() { track_click++;}); //initial data to load
-
-				$(".load_more").click(function(e) { //user clicks on button
-
-					$(this).hide(); //hide load more button on click
-					$('.animation_image').show(); //show loading image
-
-					if (track_click <= total_pages)//user click number is still less than total pages
+				$(window).scroll(function() {//detect page scroll
+					if ($(window).scrollTop() + $(window).height() == $(document).height())//user scrolled to bottom of the page?
 					{
-						//post page number and load returned data into result element
-						$.post('fetch_pages.php', {'page' : track_click}, function(data) {
+						if (track_load <= total_groups && loading == false)//there's more data to load
+						{
+							loading = true;	//prevent further ajax loading
+							$('.animation_image').show(); //show loading image
 
-							$(".load_more").show();//bring back load more button
+							//load data from the server using a HTTP POST request
+							$.post('autoload_process.php', {'group_no' : track_load}, function(data) {
 
-							$("#results").append(data);//append data received from server
+								$("#results").append(data);//append received data into the element
 
-							//scroll page smoothly to button id
-							$("html, body").animate({scrollTop : $("#load_more_button").offset().top}, 500);
+								//hide loading image
+								$('.animation_image').hide();//hide loading image once data is received
 
-							//hide loading image
-							$('.animation_image').hide(); //hide loading image once data is received
-			
-							track_click++; //user click increment on load button
+								track_load++;
+								//loaded group increment
+								loading = false;
 
-					}).fail(function(xhr, ajaxOptions, thrownError) {//any errors?
-						alert(thrownError); //alert with HTTP error
-						$(".load_more").show(); //bring back load more button
-						$('.animation_image').hide();//hide loading image once data is received
-					});
+							}).fail(function(xhr, ajaxOptions, thrownError) {//any errors?
 
-					if (track_click >= total_pages - 1)//compare user click with page number
-					{
-						//reached end of the page yet? disable load button
-						$(".load_more").attr("disabled", "disabled");
+								alert(thrownError);//alert with HTTP error
+								$('.animation_image').hide();//hide loading image
+								loading = false;
+
+							});
+	
+						}
 					}
-				}
-
+				});
 			});
-		});
 		</script>
 	</body>
 </html>
