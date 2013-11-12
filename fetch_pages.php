@@ -17,10 +17,8 @@ $position = ($page_number * $item_per_page);
 $results = mysqli_query($conn, "SELECT id, val FROM dustVal ORDER BY id DESC LIMIT $position, $item_per_page");
 
 //output results from database
-echo '<div class="col-md-4 page_result">';
 while ($row = mysqli_fetch_array($results)) {
-	echo '<span class="default-label-info"> '. $row["id"] . '"</span> <span class="badge">' . $row["val"] . '</span>';
+	echo '<div class="col-lg"><span class="default-label-info"> '. $row["id"] . '"</span> <span class="badge">' . $row["val"] . '</span></div>';
 }
-echo '</div>';
 ?>
 
