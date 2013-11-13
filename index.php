@@ -1,7 +1,7 @@
 <?php
 include ("config.inc.php");
 
-$results = $mysqli -> query("SELECT COUNT(*) as t_records FROM dustVal");
+$results = $mysqli -> query("SELECT COUNT(*) as t_records FROM dust_val");
 $total_records = $results -> fetch_object();
 $total_groups = ceil($total_records -> t_records / $items_per_group);
 $results -> close();
