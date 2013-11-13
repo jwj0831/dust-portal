@@ -21,7 +21,8 @@ if ($results) {
     
     while($obj = $results->fetch_object())
     {
-        echo '<div class="col-lg"><span class="default-label-info">Time: ' . date("Y-m-d H:i:s", $obj->timestamp) . '</span>  Value: <span class="badge">' . $obj->val . '</span></div>';
+    	
+        echo '<div class="col-lg"><span class="default-label-info">Time: ' . date("Y-m-d H:i:s", $obj->time) . '</span>  Value: <span class="badge">' . $obj->val . '</span></div>';
 	}
 
 }
