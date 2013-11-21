@@ -6,7 +6,7 @@ $total_records = $results -> fetch_object();
 $total_groups = ceil($total_records -> t_records / $items_per_group);
 $results -> close();
 
-$time = strtotime($dateInUTC.'UTC');
+$time = strtotime($dateInUTC.'KST');
 $dateInLocal = date("Y-m-d H:i:s",$time);
 ?>
 
