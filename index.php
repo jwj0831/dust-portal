@@ -110,7 +110,7 @@ $result->close();
 			new Ajax.PeriodicalUpdater('clock', 'clock.php', {method: 'get', frequency: 1 });
 		</script>
 		<script>
-			jquery(document).ready(function() {
+			jQuery(document).ready(function() {
 				var idi = parseInt(<?= $idi; ?>);// idi_number;
 				switch (idi) {
 					case 0:
