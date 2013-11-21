@@ -53,8 +53,9 @@ $results -> close();
 				-->
 			</div>
 			
-			<div class="jumbotron">
+			<div class="">
 				<div id="symbol-info">
+					<p class="text-primary text-center">Dust Standard</p>
 					<div id="symbol"></div>
 				</div>
 				<div id="text-info">
@@ -65,7 +66,7 @@ $results -> close();
 						<p class="text-danger"><strong>Today's Max Value: ...</strong></p>
 					</div>
 					<div id="today-now">
-						<p class="text-info"><strong>Current Value: ...</strong></p>
+						<p class="text-success"><strong>Current Value: ...</strong></p>
 					</div>
 				</div>
 			</div><!-- /.jumbotron-->
