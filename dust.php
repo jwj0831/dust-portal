@@ -56,7 +56,7 @@ $results -> close();
 				-->
 			</div>
 			
-			<div class="row">
+			<div id="top-row" class="row">
 				<div id="symbol-info" class="col-md-6 col-lg-6 text-center">
 					<strong>
 						<span id="symbol-label" class="grid-label">Indoor Dust Index</span></br>
@@ -80,12 +80,12 @@ $results -> close();
 				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
 					<strong>
 						<span id="dust-label" class="grid-label">Current Dust Value</span></br>
-						<span id="dust-val">0.0</span>
+						<span id="dust-val">0.0co</span>
 					</strong>
 				</div>
 			</div>
 			
-			<div class="footer">Copyright at <strong>K2V</strong> in 2013 Fusion Project Class</div>
+			<div class="footer text-center">Copyright at <strong>K2V</strong> in 2013 Fusion Project Class</div>
 		</div><!-- /.container -->
 
 		<!-- Bootstrap core JavaScript
