@@ -115,16 +115,16 @@ $result->close();
 				switch (idi)
 				{
 				case 0:
-					$("#symbol-info")..css( "background-color", "#f5bb63" );
+					$("#symbol-info").css( "background-color", "#f5bb63" );
 				  	break;
 				case 1:
-				 	$("#symbol-info")..css( "background-color", "#e8703e" );
+				 	$("#symbol-info").css( "background-color", "#e8703e" );
 				  	break;
 				 case 2:
-				 	$("#symbol-info")..css( "background-color", "#f5bb63z" );
+				 	$("#symbol-info").css( "background-color", "#f5bb63z" );
 				  	break;
 				default:
-				  $("#symbol-info")..css( "background-color", "#f5bb63" );
+				  $("#symbol-info").css( "background-color", "#f5bb63" );
 				}
 		</script>
 	</body>

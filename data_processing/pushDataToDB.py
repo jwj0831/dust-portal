@@ -100,6 +100,7 @@ while 1 :
 			if convVal > max_data:
 				curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
 				db.commit()
+				max_data = convVal;
 		else:
 			max_data = 0
 	else:
