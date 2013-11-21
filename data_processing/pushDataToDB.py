@@ -7,14 +7,16 @@ import datetime
 """
 def getLatestData(curs, num):
 	latest_data = []
-	curs.execute('SELECT raw_data FROM dust_data ORDER BY id DESC LIMIT 0, "%s"'% num)
+	curs.execute("""SELECT raw_data FROM dust_data ORDER BY id DESC LIMIT 0, %s """, ( num ))
 	results = curs.fetchall()
 	for rs in results:
 		latest_data.append(float(rs[0]))
 	return latest_data
 
 def checkBeforeData(curs):
-	rows = curs.execute('SELECT COUNT(id) FROM dust_data');
+	curs.execute('SELECT COUNT(id) FROM dust_data');
+	results = curs.fetchone()
+	rows = int(results[0])
 	if rows > 10:
 		return True
 	else:
@@ -41,7 +43,7 @@ def checkMaxData(curs):
 db = MySQLdb.connect("localhost", "root", "1234", "dust")
 curs = db.cursor()
 ser = serial.Serial('/dev/ttyACM0', 9600)
-start_cond_check_flag = False
+start_cond_check_flag = checkBeforeData(curs)
 max_data = 0
 today = datetime.date.today()
 newday = today.day
@@ -56,20 +58,17 @@ conf_dic = {}
 conf_dic['lc'] = round(float(results[1]),2)
 conf_dic['lrc'] = round(float(results[2]),2)
 conf_dic['mc'] = round(float(results[3]),2)
-conf_dic['mrc'] = round(float(results[4]),2)
+conf_dic['mrc'] = int(results[4])
 conf_dic['hc'] = round(float(results[5]),2)
-conf_dic['hrc'] = round(float(results[6]),2)
+conf_dic['hrc'] = int(results[6])
+conf_dic['window'] = int(results[7])
 """-------------------------------------------------------"""
 
 while 1 :
 	# Read the data from Serial Cable...
 	dustVal = ser.readline()
 	convVal = str(round(float(dustVal), 3))
-	curs.execute( 'INSERT INTO dust_data VALUES(default, default,"%s", default)'% convVal )
-	db.commit()
-	if start_cond_check_flag == False:
-		start_cond_check_flag = checkBeforeData(curs)
-
+	
 	# Insert Sensor Data to DB with indoor dust index(idi)
 	if start_cond_check_flag == True:
 		# calculate idi number
@@ -77,21 +76,33 @@ while 1 :
 		latest_data = getLatestData(curs, 10)
  
 		# compare between lower constant=0 and lower relatice constant
-		if latest_data.count(conf_dic['hc']) > conf_dic['hrc']:
+		hc_num = 0
+		mc_num = 0
+		for i in range(10):
+			if latest_data[i] > conf_dic['hc']:
+				hc_num += 1
+			elif latest_data[i] > conf_dic['mc']:
+				mc_num += 1
+		
+		if hc_num > conf_dic['hrc']:
 			idi = 2;
-		elif latest_data.count(conf_dic['mc']) > conf_dic['mrc']:
+		elif mc_num > conf_dic['mrc']:
 			idi = 1;
 		else:
 			idi = 0;
 	
-		curs.execute( 'INSERT INTO dust_data VALUES(default, default,"%s", "%s")'% convVal, idi)
+		curs.execute( """INSERT INTO dust_data VALUES(default, default, %s, %s)""", (convVal, idi))
 		db.commit()
 
 		#Max Value Check
 		checkDay = datetime.date.today()
 		if today == checkDay:	
 			if convVal > max_data:
-				curs.execute( 'INSERT INTO max_data VALUES(default, now(), "%s" '% convVal )
+				curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
 				db.commit()
 		else:
 			max_data = 0
+	else:
+		curs.execute( 'INSERT INTO dust_data VALUES(default, default,"%s", default)'% convVal )
+		db.commit()
+		start_cond_check_flag = checkBeforeData(curs)

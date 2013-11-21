@@ -21,6 +21,10 @@ switch($idi){
 
 $result->close();
 
+$result = $mysqli->query("SELECT max_val FROM max_data ORDER BY id DESC LIMIT 0, 1");
+$obj = $result->fetch_object();
+$max_data = $obj->max_val;
+$result->close();
 //$time = strtotime($dateInUTC.'KST');
 //$dateInLocal = date("Y-m-d H:i:s",$time);
 ?>
@@ -84,7 +88,7 @@ $result->close();
 			<div class="row">
 				<div id="max-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
-						<strong><span id="max-val">2555</span></strong>
+						<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
 					
 				</div>
 				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
