@@ -43,12 +43,12 @@ $results -> close();
 	<body>
 		<div class="container">
 			<div class="header">
-				<ul class="nav nav-pills pull-right">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Settings</a></li>
-					<li><a href="#">About</a></li>
-				</ul>
 				<h3 class="text-muted">Real-time Dust Monitoring System</h3>
+				<ul class="nav nav-pills pull-right">
+					<li><a id="home" class="active" href="#">Home</a></li>
+					<li><a id="settings"href="#">Settings</a></li>
+					<li><a id="about" href="#">About</a></li>
+				</ul>
 			</div>
 			
 			<div class="jumbotron">

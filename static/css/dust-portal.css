@@ -8,24 +8,26 @@
 #symbol-info{
 	width: 160px;
 	height: 160px;
-	display: inline;
+	display: inline-block;
 	text-align: center;
-	margin: 20px 20px;
 }
 
 #symbol{
-	width: 100px;
-	height: 100px;
-	margin: 30px 30px;
+	width: 140px;
+	height: 140px;
+	margin: 10px 10px;
 	background: red;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
+	-moz-border-radius: 70px;
+	-webkit-border-radius: 70px;
+	border-radius: 70px;
 }
 #text-info{
-	display: inline;
-	width:560px;
-	height: 560px;
+	display: inline-block;
+	width:400px;
+	height: 400px;
 	margin: 20px 20px;
 }
 
+.footer{
+	color: #777;
+}
