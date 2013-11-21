@@ -21,15 +21,6 @@
 	background-color: #d33431;
 }
 
-#symbol{
-	width: 140px;
-	height: 140px;
-	margin: 10px 10px;
-	background: red;
-	-moz-border-radius: 70px;
-	-webkit-border-radius: 70px;
-	border-radius: 70px;
-}
 #time-info{
 	background-color: #05c6d8;
 	/* da005e d33431*/

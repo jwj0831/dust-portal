@@ -57,24 +57,33 @@ $results -> close();
 			</div>
 			
 			<div class="row">
-				<div id="symbol-info" class="col-md-6 col-lg-6">
-					<p class="text-primary text-center">Dust Standard</p>
-					<div id="symbol"></div>
+				<div id="symbol-info" class="col-md-6 col-lg-6 text-center">
+					<strong>
+						<span id="symbol-label" class="grid-label">Indoor Dust Index</span></br>
+						<span id="symbol-val">Not Bad</span>
+					</strong>
 				</div>
-				<div id="time-info" class="grid-block col-md-6 col-lg-6">
-					<strong>Current Time: <span id="clock"></span></strong>
+				<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
+					<strong>
+						<span id="clock-label" class="grid-label">Time</span></br>
+						<span id="clock"></span>
+					</strong>
 				</div>
 			</div>
 			<div class="row">
-				<div id="max-info" class="grid-block col-md-6 col-lg-6">
-					<strong>Today's Max Value</strong>
+				<div id="max-info" class="grid-block col-md-6 col-lg-6 text-center">
+					<strong>
+						<span id="max-label" class="grid-label">Today's Max Value</span></br>
+						<span id="max-val">2555</span>
+					</strong>
 				</div>
-				<div id="dust-info" class="grid-block col-md-6 col-lg-6">
-					<strong>Current Dust Value</strong>
+				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
+					<strong>
+						<span id="dust-label" class="grid-label">Current Dust Value</span></br>
+						<span id="dust-val">0.0</span>
+					</strong>
 				</div>
-	
 			</div>
-			
 			
 			<div class="footer">Copyright at <strong>K2V</strong> in 2013 Fusion Project Class</div>
 		</div><!-- /.container -->
