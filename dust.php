@@ -22,7 +22,7 @@ $results -> close();
 		<link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="./static/favicon.ico" type="image/x-icon">
 
-		<title>Real time Dust Monitoring System</title>
+		<title>Indoor Dust Monitor</title>
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
@@ -46,7 +46,7 @@ $results -> close();
 	<body>
 		<div class="container">
 			<div class="header">
-				<h3 class="text-muted text-center"><a href="http://117.16.146.81/dust-portal/dust.php">Real-time Dust Monitoring System</a></h3>
+				<h3 class="text-muted text-center"><a href="http://117.16.146.81/dust-portal/dust.php"><strong>Real-time</strong> Indoor Dust Monitoring System</a></h3>
 				<!--
 				<ul class="nav nav-pills pull-right">
 					<li><a id="home" class="active" href="#">Home</a></li>
@@ -56,25 +56,27 @@ $results -> close();
 				-->
 			</div>
 			
-			<div class="row" id="main">
+			<div class="row">
 				<div id="symbol-info" class="col-md-6 col-lg-6">
 					<p class="text-primary text-center">Dust Standard</p>
 					<div id="symbol"></div>
 				</div>
-				<div id="text-info" class="col-md-6 col-lg-6">
-					<div id="today-time">
-						<p class="text-primary text-val"><strong>Current Time: <span id="clock"></span></strong></p>
-					</div>
-					<div id="today-max">
-						<p class="text-danger text-val"><strong>Today's Max Value: ...</strong></p>
-					</div>
-					<div id="today-now">
-						<p class="text-success text-val"><strong>Current Value: ...</strong></p>
-					</div>
+				<div id="time-info" class="grid-block col-md-6 col-lg-6">
+					<strong>Current Time: <span id="clock"></span></strong>
 				</div>
-				
+			</div>
+			<div class="row">
+				<div id="max-info" class="grid-block col-md-6 col-lg-6">
+					<strong>Today's Max Value</strong>
+				</div>
+				<div id="dust-info" class="grid-block col-md-6 col-lg-6">
+					<strong>Current Dust Value</strong>
+				</div>
+	
 			</div>
 			
+			
+			<div class="footer">Copyright at <strong>K2V</strong> in 2013 Fusion Project Class</div>
 		</div><!-- /.container -->
 
 		<!-- Bootstrap core JavaScript
@@ -84,7 +86,7 @@ $results -> close();
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
 		<script type="text/javascript"> 
-			new Ajax.PeriodicalUpdater('clock', 'clock.php', {   method: 'get',   frequency: 1 });
+			new Ajax.PeriodicalUpdater('clock', 'clock.php', {method: 'get', frequency: 1 });
 		</script>
 	</body>
 </html>

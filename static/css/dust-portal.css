@@ -13,12 +13,12 @@
 	border-top: 1px solid #e5e5e5;
 	padding-top: 20px;
 }
+.grid-block{
+	
+}
 
 #symbol-info{
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	background-color: #bce8f1;
+	background-color: #d33431;
 }
 
 #symbol{
@@ -30,8 +30,15 @@
 	-webkit-border-radius: 70px;
 	border-radius: 70px;
 }
-#text-info{
-
+#time-info{
+	background-color: #05c6d8;
+	/* da005e d33431*/
+}
+#max-info{
+	background-color: #7fbf33;
+}
+#dust-info{
+	background-color: #fbca01;
 }
 
 .text-val{
