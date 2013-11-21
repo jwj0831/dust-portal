@@ -32,6 +32,8 @@
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+	top-row{padding-top: 20%;}
+	.footer{margin-top:25%;}
 	.grid-block{
 		width: 48%;
 		margin: 1% 1%;
