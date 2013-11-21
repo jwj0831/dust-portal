@@ -5,7 +5,7 @@ $results = $mysqli -> query("SELECT raw_data, idi_data FROM dust_data ORDER BY i
 $total_records = $results -> fetch_object();
 
 $raw_data = $total_records -> raw_data;
-$idi = $total_cords -> idi_data;
+$idi = $total_records -> idi_data;
 $idi_string = "";
 switch($idi){
 	case 0:
