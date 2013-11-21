@@ -59,18 +59,18 @@ $results -> close();
 				</div>
 				<div id="text-info">
 					<div id="today-time">
-						<p class="text-primary">Current Time: ...</p>
+						<p class="text-primary"><strong>Current Time: ...</strong></p>
 					</div>
 					<div id="today-max">
-						<p class="text-danger">Today's Max Value: ...</p>
+						<p class="text-danger"><strong>Today's Max Value: ...</strong></p>
 					</div>
 					<div id="today-now">
-						<p class="trxt-info">Current Value: ...</p>
+						<p class="text-info"><strong>Current Value: ...</strong></p>
 					</div>
 				</div>
 			</div><!-- /.jumbotron-->
 			
-			<div class="footer">
+			<div class="footer text-center">
 				<p>Copyright at K2V in 2013</p>
 			</div>
 		</div><!-- /.container -->
