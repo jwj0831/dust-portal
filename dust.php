@@ -53,7 +53,7 @@ $results -> close();
 				-->
 			</div>
 			
-			<div class="">
+			<div class="main">
 				<div id="symbol-info">
 					<p class="text-primary text-center">Dust Standard</p>
 					<div id="symbol"></div>
