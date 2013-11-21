@@ -25,12 +25,10 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-	.title{color: #ede61c }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-	.title{color: #463737 }
 	.grid-block{
 		width: 48%;
 		margin: 1% 1%;
@@ -39,7 +37,8 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.title{color: #d33431 }
+	.top-row{padding-top: 40%;}
+	.footer{margin-top:40%;}
 	.grid-block{
 		width: 48%;
 		margin: 1% 1%;
