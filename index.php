@@ -111,20 +111,20 @@ $result->close();
 		</script>
 		<script>
 			$(document).ready(function() {
-				var idi = <?= $idi; ?>;// idi_number;
+				var idi = parseInt(<?= $idi; ?>);// idi_number;
 				switch (idi)
 				{
 				case 0:
-					$("#symbol-info").css( "background-color", "#f5bb63" );
+					$("#symbol-info").css( {"background-color": "#f5bb63" });
 				  	break;
 				case 1:
-				 	$("#symbol-info").css( "background-color", "#e8703e" );
+				 	$("#symbol-info").css( {"background-color": "#e8703e" });
 				  	break;
 				case 2:
-				 	$("#symbol-info").css( "background-color", "#d33431" );
+				 	$("#symbol-info").css( {"background-color": "#d33431" });
 				  	break;
 				default:
-				  $("#symbol-info").css( "background-color", "#f5bb63" );
+				  $("#symbol-info").css( {}"background-color": "#f5bb63" });
 				}
 		</script>
 	</body>

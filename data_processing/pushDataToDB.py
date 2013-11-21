@@ -97,10 +97,10 @@ while 1 :
 		#Max Value Check
 		checkDay = datetime.date.today()
 		if today == checkDay:	
-			if int(convVal) > max_data:
+			if float(convVal) > max_data:
 				curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
 				db.commit()
-				max_data = int(convVal);
+				max_data = float(convVal);
 		else:
 			max_data = 0
 	else:
