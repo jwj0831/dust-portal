@@ -26,7 +26,8 @@
 	.footer{margin-top:20px;}
 }
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
+	.footer{margin-top:20px;} 
 }
 
 /* Medium devices (desktops, 992px and up) */
