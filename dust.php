@@ -53,27 +53,24 @@ $results -> close();
 				-->
 			</div>
 			
-			<div class="main">
-				<div class="row">
-					<div id="symbol-info" class="col-md-6 col-lg-6">
-						<p class="text-primary text-center">Dust Standard</p>
-						<div id="symbol"></div>
+			<div class="row" id="main">
+				<div id="symbol-info" class="col-md-6 col-lg-6">
+					<p class="text-primary text-center">Dust Standard</p>
+					<div id="symbol"></div>
+				</div>
+				<div id="text-info" class="col-md-6 col-lg-6">
+					<div id="today-time">
+						<p class="text-primary"><strong>Current Time: ...</strong></p>
 					</div>
-					<div id="text-info" class="col-md-6 col-lg-6">
-						<div id="today-time">
-							<p class="text-primary"><strong>Current Time: ...</strong></p>
-						</div>
-						<div id="today-max">
-							<p class="text-danger"><strong>Today's Max Value: ...</strong></p>
-						</div>
-						<div id="today-now">
-							<p class="text-success"><strong>Current Value: ...</strong></p>
-						</div>
+					<div id="today-max">
+						<p class="text-danger"><strong>Today's Max Value: ...</strong></p>
 					</div>
-					
+					<div id="today-now">
+						<p class="text-success"><strong>Current Value: ...</strong></p>
+					</div>
 				</div>
 				
-			</div><!-- /.main-->
+			</div>
 			
 		</div><!-- /.container -->
 
