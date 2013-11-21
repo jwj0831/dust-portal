@@ -58,16 +58,12 @@ $results -> close();
 			
 			<div id="top-row" class="row">
 				<div id="symbol-info" class="col-md-6 col-lg-6 text-center">
-					<strong>
 						<span id="symbol-label" class="grid-label">Indoor Dust Index</span></br>
-						<span id="symbol-val">Not Bad</span>
-					</strong>
+						<strong><span id="symbol-val">Not Bad</span></strong>
 				</div>
 				<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
-					<strong>
 						<span id="clock-label" class="grid-label">Time</span></br>
-						<span id="clock"></span>
-					</strong>
+						<strong><span id="clock"></span></strong>
 				</div>
 			</div>
 			<div class="row">
