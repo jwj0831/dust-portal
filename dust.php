@@ -63,7 +63,7 @@ $results -> close();
 				</div>
 				<div id="text-info" class="col-md-6 col-lg-6">
 					<div id="today-time">
-						<p class="text-primary text-val"><strong>Current Time: <?php echo date("Y-m-d H:i:s"); ?></strong></p>
+						<p class="text-primary text-val"><strong>Current Time: <span id="clock"></span></strong></p>
 					</div>
 					<div id="today-max">
 						<p class="text-danger text-val"><strong>Today's Max Value: ...</strong></p>
@@ -82,5 +82,9 @@ $results -> close();
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
+		<script type="text/javascript"> 
+			new Ajax.PeriodicalUpdater('clock', 'clock.php', {   method: 'get',   frequency: 1 });
+		</script>
 	</body>
 </html>
