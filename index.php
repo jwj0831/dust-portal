@@ -111,7 +111,7 @@ $result->close();
 		</script>
 		<script>
 			$(document).ready(function() {
-				var idi = <?php echo $idi; ?>;// idi_number;
+				var idi = <?= $idi; ?>;// idi_number;
 				switch (idi)
 				{
 				case 0:
@@ -120,8 +120,8 @@ $result->close();
 				case 1:
 				 	$("#symbol-info").css( "background-color", "#e8703e" );
 				  	break;
-				 case 2:
-				 	$("#symbol-info").css( "background-color", "#f5bb63z" );
+				case 2:
+				 	$("#symbol-info").css( "background-color", "#d33431" );
 				  	break;
 				default:
 				  $("#symbol-info").css( "background-color", "#f5bb63" );

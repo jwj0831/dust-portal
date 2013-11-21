@@ -73,12 +73,12 @@ while 1 :
 	if start_cond_check_flag == True:
 		# calculate idi number
 		idi = 0;
-		latest_data = getLatestData(curs, 10)
+		latest_data = getLatestData(curs, conf_dic['window'] )
  
 		# compare between lower constant=0 and lower relatice constant
 		hc_num = 0
 		mc_num = 0
-		for i in range(10):
+		for i in range( conf_dic['window'] ):
 			if latest_data[i] > conf_dic['hc']:
 				hc_num += 1
 			elif latest_data[i] > conf_dic['mc']:
@@ -97,10 +97,10 @@ while 1 :
 		#Max Value Check
 		checkDay = datetime.date.today()
 		if today == checkDay:	
-			if convVal > max_data:
+			if int(convVal) > max_data:
 				curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
 				db.commit()
-				max_data = convVal;
+				max_data = int(convVal);
 		else:
 			max_data = 0
 	else:
