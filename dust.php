@@ -19,7 +19,7 @@ switch($idi){
 		break;
 }
 
-$obj-> close();
+$obj->close();
 
 //$time = strtotime($dateInUTC.'KST');
 //$dateInLocal = date("Y-m-d H:i:s",$time);
