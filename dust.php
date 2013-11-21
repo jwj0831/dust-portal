@@ -1,9 +1,23 @@
 <?php
 include ("config.inc.php");
 
-$results = $mysqli -> query("SELECT COUNT(*) as t_records FROM dust_val");
+$results = $mysqli -> query("SELECT raw_data, idi FROM dust_data ORDER BY id DESC LIMIT 0, 1");
 $total_records = $results -> fetch_object();
-$total_groups = ceil($total_records -> t_records / $items_per_group);
+$raw_data = $total_records -> raw_data;
+$idi = $total_cords -> idi;
+$idi_string = "";
+switch($idi){
+	case 0:
+		$idi_string = "Good";
+		break;
+	case 1:
+		$idi_string = "Not Bad";
+		break;
+	case 2:
+		$idi_string = "Severe";
+		break;
+}
+
 $results -> close();
 
 //$time = strtotime($dateInUTC.'KST');
@@ -59,7 +73,7 @@ $results -> close();
 			<div id="top-row" class="row">
 				<div id="symbol-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="symbol-label" class="grid-label">Indoor</br> Dust Index</span></br>
-						<strong><span id="symbol-val">Not Bad</span></strong>
+						<strong><span id="symbol-val"><?php $idi_string ?></span></strong>
 				</div>
 				<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="clock-label" class="grid-label">Time</span></br>
@@ -74,7 +88,7 @@ $results -> close();
 				</div>
 				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="dust-label" class="grid-label">Current</br> Dust Value</span></br>
-						<strong><span id="dust-val">25.8</span></strong>
+						<strong><span id="dust-val"><?php $raw_data?></span></strong>
 				</div>
 			</div>
 			
