@@ -68,7 +68,7 @@ $results -> close();
 			</div>
 			<div class="row">
 				<div id="max-info" class="grid-block col-md-6 col-lg-6 text-center">
-						<span id="max-label" class="grid-label">Today's Max Value</span></br>
+						<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
 						<strong><span id="max-val">2555</span></strong>
 					
 				</div>
