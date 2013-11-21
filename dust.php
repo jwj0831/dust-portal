@@ -6,7 +6,7 @@ $total_records = $results -> fetch_object();
 $total_groups = ceil($total_records -> t_records / $items_per_group);
 $results -> close();
 
-$dt = new DateTime();
+//$dt = new DateTime();
 
 ?>
 
@@ -63,7 +63,7 @@ $dt = new DateTime();
 				</div>
 				<div id="text-info" class="col-md-6 col-lg-6">
 					<div id="today-time">
-						<p class="text-primary text-val"><strong>Current Time: <?php echo $dt->format('Y-m-d H:i:s'); ?></strong></p>
+						<p class="text-primary text-val"><strong>Current Time: <?php echo date('Y-m-d H:i:s'); ?></strong></p>
 					</div>
 					<div id="today-max">
 						<p class="text-danger text-val"><strong>Today's Max Value: ...</strong></p>
