@@ -55,11 +55,11 @@ $results -> close();
 			
 			<div class="main">
 				<div class="row">
-					<div id="symbol-info" class="col-md-8">
+					<div id="symbol-info" class="col-xs-6">
 						<p class="text-primary text-center">Dust Standard</p>
 						<div id="symbol"></div>
 					</div>
-					<div id="text-info" class="col-md-4">
+					<div id="text-info" class="col-xs-6">
 						<div id="today-time">
 							<p class="text-primary"><strong>Current Time: ...</strong></p>
 						</div>
