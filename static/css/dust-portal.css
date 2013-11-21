@@ -42,8 +42,8 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	#top-row{padding-top: 20%;}
-	.footer{margin-top:25%;}
+	.header{margin-bottom: 20%;}
+	.footer{margin-top:20%;}
 	.grid-block{
 		width: 48%;
 		margin: 1% 1%;
