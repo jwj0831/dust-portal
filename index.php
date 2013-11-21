@@ -125,8 +125,7 @@ $result->close();
 					default:
 					  $("#symbol-info").css( {"background-color": "#f5bb63" });
 					}
-				}
-			});
+				});
 		</script>
 	</body>
 </html>
