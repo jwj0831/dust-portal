@@ -5,13 +5,6 @@ $results = $mysqli -> query("SELECT COUNT(*) as t_records FROM dust_val");
 $total_records = $results -> fetch_object();
 $total_groups = ceil($total_records -> t_records / $items_per_group);
 $results -> close();
-
-/*
- $result = mysqli_query($conn, "SELECT COUNT(*) FROM dustVal");
- $get_total_rows = mysqli_fetch_array($result);
-
- $total_pages = ceil($get_total_rows[0] / $item_per_page);
- */
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +12,7 @@ $results -> close();
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!--<meta http-equiv='refresh' content='30;url=http://117.16.146.55/dust-portal'> -->
+		<<meta http-equiv='refresh' content='30;url=http://117.16.146.81/dust-portal'>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -60,12 +53,11 @@ $results -> close();
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						먼지 측정 현황
+						Dust Value
 					</div>
 					<div class="panel-body">
 						30초마다 먼지센서로부터 값을 받아서 보여주고 있습니다.</br>
 						개발과정 다음을 참조해 주세요</br>
-						<a href="http://www.notforme.kr/archives/846">비글본 블랙 : 실내 공기질 모니터링 서버 만들기</a>
 					</div>
 
 					
@@ -74,17 +66,6 @@ $results -> close();
 					<div class="animation_image" style="display:none" align="center">
 						<img src="ajax-loader.gif">
 					</div>
-															
-					<!--
-					<div id="results"></div>
-					<div align="center">
-						<button class="load_more" id="load_more_button">
-							load More
-						</button>
-						<div class="animation_image" style="display:none;"><img src="ajax-loader.gif"> Loading...
-						</div>
-					</div>
-					-->
 				</div><!-- /.panel -->
 			</div><!-- /.dust-template -->
 		</div><!-- /.container -->

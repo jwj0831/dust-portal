@@ -1,0 +1,27 @@
+.container {
+	max-width: 800px;
+}
+#symbol-info{
+	width: 160px;
+	height: 160px;
+	display: inline;
+	text-align: center;
+	margin: 20px 20px;
+}
+
+#symbol{
+	width: 100px;
+	height: 100px;
+	margin: 30px 30px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+#text-info{
+	display: inline;
+	width:560px;
+	height: 560px;
+	margin: 20px 20px;
+}
+
