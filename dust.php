@@ -1,11 +1,11 @@
 <?php
 include ("config.inc.php");
 
-$results = $mysqli -> query("SELECT raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 0, 1");
-$total_records = $results -> fetch_object();
+$result = $mysqli->query("SELECT raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 0, 1");
+$obj = $result->fetch_object();
 
-$raw_data = $total_records -> raw_data;
-$idi = $total_records -> idi_data;
+$raw = $obj->raw_data;
+$idi = $obj->idi_data;
 $idi_string = "";
 switch($idi){
 	case 0:
@@ -74,7 +74,7 @@ $results -> close();
 			<div id="top-row" class="row">
 				<div id="symbol-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="symbol-label" class="grid-label">Indoor</br> Dust Index</span></br>
-						<strong><span id="symbol-val"><?php $idi_string ?></span></strong>
+						<strong><span id="symbol-val"><?php echo $idi_string; ?></span></strong>
 				</div>
 				<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="clock-label" class="grid-label">Time</span></br>
@@ -89,7 +89,7 @@ $results -> close();
 				</div>
 				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="dust-label" class="grid-label">Current</br> Dust Value</span></br>
-						<strong><span id="dust-val"><?php $raw_data?></span></strong>
+						<strong><span id="dust-val"><?php echo $raw;?></span></strong>
 				</div>
 			</div>
 			
