@@ -2,11 +2,13 @@
 	margin-left: -15px;
 	margin-right: -15px;
 	margin-bottom: 20px;
-
 }
 
 .container {
 	max-width: 800px;
+}
+.title{
+	color: $fff;
 }
 
 #top-row {
@@ -19,7 +21,8 @@
 	color: #fff;
 }
 .grid-block{
-	
+	margin: 1% 1%;
+	width: 48%;
 }
 
 #symbol-info{

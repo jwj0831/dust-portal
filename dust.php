@@ -46,7 +46,7 @@ $results -> close();
 	<body>
 		<div class="container">
 			<div class="header">
-				<h3 class="text-muted text-center"><a href="http://117.16.146.81/dust-portal/dust.php"><strong>Real-time</strong> Indoor Dust Monitoring System</a></h3>
+				<h3 class="text-muted text-center"><a class="title" href="http://117.16.146.81/dust-portal/dust.php"><strong>Real-time Indoor Dust Monitoring System</strong></a></h3>
 				<!--
 				<ul class="nav nav-pills pull-right">
 					<li><a id="home" class="active" href="#">Home</a></li>
@@ -68,16 +68,13 @@ $results -> close();
 			</div>
 			<div class="row">
 				<div id="max-info" class="grid-block col-md-6 col-lg-6 text-center">
-					<strong>
 						<span id="max-label" class="grid-label">Today's Max Value</span></br>
-						<span id="max-val">2555</span>
-					</strong>
+						<strong><span id="max-val">2555</span></strong>
+					
 				</div>
 				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
-					<strong>
 						<span id="dust-label" class="grid-label">Current Dust Value</span></br>
-						<span id="dust-val">0.0co</span>
-					</strong>
+						<strong><span id="dust-val">0.0co</span></strong>
 				</div>
 			</div>
 			
