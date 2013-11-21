@@ -1,1 +1,1 @@
-<?php echo date("Y-n-j H:i:s"); ?>
+<?php echo date("Y-n-j")."<br/>".date("H:i:s"); ?>
