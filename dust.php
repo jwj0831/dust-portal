@@ -54,26 +54,27 @@ $results -> close();
 			</div>
 			
 			<div class="main">
-				<div id="symbol-info">
-					<p class="text-primary text-center">Dust Standard</p>
-					<div id="symbol"></div>
+				<div class="row">
+					<div id="symbol-info" class="col-md-8">
+						<p class="text-primary text-center">Dust Standard</p>
+						<div id="symbol"></div>
+					</div>
+					<div id="text-info" class="col-md-4">
+						<div id="today-time">
+							<p class="text-primary"><strong>Current Time: ...</strong></p>
+						</div>
+						<div id="today-max">
+							<p class="text-danger"><strong>Today's Max Value: ...</strong></p>
+						</div>
+						<div id="today-now">
+							<p class="text-success"><strong>Current Value: ...</strong></p>
+						</div>
+					</div>
+					
 				</div>
-				<div id="text-info">
-					<div id="today-time">
-						<p class="text-primary"><strong>Current Time: ...</strong></p>
-					</div>
-					<div id="today-max">
-						<p class="text-danger"><strong>Today's Max Value: ...</strong></p>
-					</div>
-					<div id="today-now">
-						<p class="text-success"><strong>Current Value: ...</strong></p>
-					</div>
-				</div>
-			</div><!-- /.jumbotron-->
+				
+			</div><!-- /.main-->
 			
-			<div class="footer text-center">
-				<p>Copyright at K2V in 2013</p>
-			</div>
 		</div><!-- /.container -->
 
 		<!-- Bootstrap core JavaScript
