@@ -58,7 +58,7 @@ $results -> close();
 			
 			<div id="top-row" class="row">
 				<div id="symbol-info" class="grid-block col-md-6 col-lg-6 text-center">
-						<span id="symbol-label" class="grid-label">Indoor Dust Index</span></br>
+						<span id="symbol-label" class="grid-label">Indoor</br> Dust Index</span></br>
 						<strong><span id="symbol-val">Not Bad</span></strong>
 				</div>
 				<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
@@ -73,7 +73,7 @@ $results -> close();
 					
 				</div>
 				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
-						<span id="dust-label" class="grid-label">Current Dust Value</span></br>
+						<span id="dust-label" class="grid-label">Current</br> Dust Value</span></br>
 						<strong><span id="dust-val">25.8</span></strong>
 				</div>
 			</div>
