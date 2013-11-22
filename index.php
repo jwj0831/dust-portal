@@ -65,7 +65,7 @@ $result->close();
 	<body>
 		<div class="container">
 			<div class="header">
-				<h3 class="text-muted text-center"><a class="title" href="http://117.16.146.81/dust-portal/dust.php"><strong>Real-time Indoor Dust Monitoring System</strong></a></h3>
+				<h3 class="text-muted text-center"><a class="title" href="http://117.16.146.81/dust-portal/"><strong>Real-time Indoor Dust Monitoring System</strong></a></h3>
 				<!--
 				<ul class="nav nav-pills pull-right">
 					<li><a id="home" class="active" href="#">Home</a></li>
@@ -82,7 +82,7 @@ $result->close();
 				</div>
 				<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="clock-label" class="grid-label">Time</span></br>
-						<strong><span id="clock"></span></strong>
+						<strong><span id="clock">Wait...</br>Server</span></strong>
 				</div>
 			</div>
 			<div class="row">
