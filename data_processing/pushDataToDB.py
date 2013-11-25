@@ -45,8 +45,8 @@ curs = db.cursor()
 ser = serial.Serial('/dev/ttyACM0', 9600)
 start_cond_check_flag = checkBeforeData(curs)
 max_data = 0
-today = datetime.date.today()
-newday = today.day
+dayFormat = datetime.date.today()
+currentDay = dayFormat.day
 """
 ----------------------------------------
 """
@@ -76,17 +76,17 @@ while 1 :
 		latest_data = getLatestData(curs, conf_dic['window'] )
  
 		# compare between lower constant=0 and lower relatice constant
-		hc_num = 0
-		mc_num = 0
+		hc_frq = 0
+		mc_frq = 0
 		for i in range( conf_dic['window'] ):
 			if latest_data[i] > conf_dic['hc']:
-				hc_num += 1
+				hc_frq += 1
 			elif latest_data[i] > conf_dic['mc']:
-				mc_num += 1
+				mc_frq += 1
 		
-		if hc_num > conf_dic['hrc']:
+		if hc_frq > conf_dic['hrc']:
 			idi = 2;
-		elif mc_num > conf_dic['mrc']:
+		elif mc_frq > conf_dic['mrc']:
 			idi = 1;
 		else:
 			idi = 0;
@@ -95,14 +95,19 @@ while 1 :
 		db.commit()
 
 		#Max Value Check
-		checkDay = datetime.date.today()
-		if today == checkDay:	
+		newDayFormat = datetime.date.today()
+		newDay = newDayFormat.day
+		
+		if currentDay != newDay:
+			max_data = 0
+			currentDay = newDay
+		
+		if currentDay == newDay:	
 			if float(convVal) > max_data:
 				curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
 				db.commit()
 				max_data = float(convVal);
-		else:
-			max_data = 0
+
 	else:
 		curs.execute( 'INSERT INTO dust_data VALUES(default, default,"%s", default)'% convVal )
 		db.commit()
