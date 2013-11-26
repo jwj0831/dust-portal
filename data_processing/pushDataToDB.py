@@ -6,12 +6,12 @@ import datetime
 ----------Function Declaration----------
 """
 def getLatestData(curs, num):
-	latest_data = []
+	latest_list_in_window = []
 	curs.execute("""SELECT raw_data FROM dust_data ORDER BY id DESC LIMIT 0, %s """, ( num ))
 	results = curs.fetchall()
 	for rs in results:
-		latest_data.append(float(rs[0]))
-	return latest_data
+		latest_list_in_window.append(float(rs[0]))
+	return latest_list_in_window
 
 def checkBeforeData(curs):
 	curs.execute('SELECT COUNT(id) FROM dust_data');
@@ -73,15 +73,15 @@ while 1 :
 	if start_cond_check_flag == True:
 		# calculate idi number
 		idi = 0;
-		latest_data = getLatestData(curs, conf_dic['window'] )
+		latest_list_in_window = getLatestData(curs, conf_dic['window'] )
  
 		# compare between lower constant=0 and lower relatice constant
 		hc_frq = 0
 		mc_frq = 0
 		for i in range( conf_dic['window'] ):
-			if latest_data[i] > conf_dic['hc']:
+			if latest_list_in_window[i] > conf_dic['hc']:
 				hc_frq += 1
-			elif latest_data[i] > conf_dic['mc']:
+			elif latest_list_in_window[i] > conf_dic['mc']:
 				mc_frq += 1
 		
 		if hc_frq > conf_dic['hrc']:
