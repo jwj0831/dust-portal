@@ -32,6 +32,19 @@ def getMaxData(curs):
 	else :
 		return 0
 	
+def getConfigurationDic(curs):
+	curs.execute("""SELECT * FROM dust_conf""");
+	results= curs.fetchone()
+	temp_dic = {}	
+	temp_dic['lc'] = round(float(results[1]),2)
+	temp_dic['lrc'] = round(float(results[2]),2)
+	temp_dic['mc'] = round(float(results[3]),2)
+	temp_dic['mrc'] = int(results[4])
+	temp_dic['hc'] = round(float(results[5]),2)
+	temp_dic['hrc'] = int(results[6])
+	temp_dic['window'] = int(results[7])
+	return temp_dic
+	
 """
 ----------------------------------------
 """
@@ -46,22 +59,10 @@ start_cond_check_flag = checkBeforeData(curs)
 max_data = getMaxData(curs)
 dayFormat = datetime.date.today()
 currentDay = dayFormat.day
+conf_dic = getConfigurationDic(curs)
 """
 ----------------------------------------
 """
-
-"""Load Configuration Val---------------------------------"""
-curs.execute("""SELECT * FROM dust_conf""");
-results= curs.fetchone()
-conf_dic = {}	
-conf_dic['lc'] = round(float(results[1]),2)
-conf_dic['lrc'] = round(float(results[2]),2)
-conf_dic['mc'] = round(float(results[3]),2)
-conf_dic['mrc'] = int(results[4])
-conf_dic['hc'] = round(float(results[5]),2)
-conf_dic['hrc'] = int(results[6])
-conf_dic['window'] = int(results[7])
-"""-------------------------------------------------------"""
 
 while 1 :
 	# Read the data from Serial Cable...
@@ -72,6 +73,7 @@ while 1 :
 	if start_cond_check_flag == True:
 		# calculate idi number
 		idi = 0;
+		conf_dic = getConfigurationDic(curs)
 		latest_list_in_window = getLatestData(curs, conf_dic['window'] )
  
 		# compare between lower constant=0 and lower relatice constant
