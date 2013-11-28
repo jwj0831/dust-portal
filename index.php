@@ -66,7 +66,7 @@ $result->close();
 		<div class="container">
 			<div class="header">
 				<h3 class="text-muted text-center"><a class="title" href="http://117.16.146.81/dust-portal/"><strong>Real-time Indoor Dust Monitoring System</strong></a></h3>
-				<ul class="nav nav-pills pull-right">
+				<ul class="nav nav-tabs nav-justified">
 					<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/">Home</a></li>
 					<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php">Settings</a></li>
 				</ul>
