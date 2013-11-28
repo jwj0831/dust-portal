@@ -23,7 +23,7 @@ def checkBeforeData(curs):
 		return False
 	
 def getMaxData(curs):
-	isItMaxVal = curs.execute( 'SELET * FROM max_data WHERE day = now()' )
+	isItMaxVal = curs.execute( 'SELECT * FROM max_data WHERE day = now()' )
 	if isItMaxVal == 1:
 		results = curs.fetchone()
 		max_id = results[0];
