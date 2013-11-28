@@ -57,7 +57,7 @@ $result->close();
 				</ul>
 			</div>
 			
-			<form role="form" action="./setting_update.php">
+			<form method="post" role="form" action="./setting_update.php">
 				<div class="form-group">
 			    	<label for="lc">Lower Constant: </label>
 			    	<input type="text" class="form-control" id="lc" value="<?php echo $lc;?>">
