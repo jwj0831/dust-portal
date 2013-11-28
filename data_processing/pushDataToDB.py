@@ -22,16 +22,15 @@ def checkBeforeData(curs):
 	else:
 		return False
 	
-def checkMaxData(curs):
+def getMaxData(curs):
 	isItMaxVal = curs.execute( 'SELET * FROM max_data WHERE day = now()' )
 	if isItMaxVal == 1:
 		results = curs.fetchone()
 		max_id = results[0];
 		max_data = round(float(results[1]),2)
-	else:
-		curs.execute( 'INSERT INTO max_data VALUES(default, now(), "0"' )
-		db.commit()
-		curs.commit
+		return max_data
+	else :
+		return 0
 	
 """
 ----------------------------------------
@@ -44,7 +43,7 @@ db = MySQLdb.connect("localhost", "root", "1234", "dust")
 curs = db.cursor()
 ser = serial.Serial('/dev/ttyACM0', 9600)
 start_cond_check_flag = checkBeforeData(curs)
-max_data = 0
+max_data = getMaxData(curs)
 dayFormat = datetime.date.today()
 currentDay = dayFormat.day
 """
