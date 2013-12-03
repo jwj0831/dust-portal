@@ -49,12 +49,5 @@ include ("header.php");
 						
 			<div class="footer text-center">Copyright at <strong>K2V</strong> in 2013 Fusion Project Class</div>
 		</div><!-- /.container -->
-
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
-		<script src="./static/js/nav.js"></script>
 	</body>
 </html>

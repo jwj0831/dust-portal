@@ -19,12 +19,6 @@ include ("header.php");
 				Copyright at NFM in 2013
 			</p>
 		</footer>
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
-		<script src="./static/js/nav.js"></script>
 
 		<script>
 			$(document).ready(function() {
