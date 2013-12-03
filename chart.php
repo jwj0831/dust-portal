@@ -19,8 +19,7 @@ include ("header.php");
 				var options = {
 					title: 'Raw Dust Info',
 					legend: 'bottom',
-					height: 400,
-					pointSize: 5
+					height: 400
 				};
 			
 				var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
