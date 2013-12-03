@@ -6,7 +6,7 @@ echo '{ "cols": [ {"id":"","label":"year","type":"string"}, {"id":"","label":"sa
 
 include("config.inc.php"); //include config file
 
-$result = $mysqli->query("SELECT timestamp, raw_data, FROM dust_data ORDER BY id DESC LIMIT 0, 20");
+$result = $mysqli->query("SELECT timestamp, raw_data FROM dust_data ORDER BY id DESC LIMIT 0, 20");
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 $data['cols'][] = array('type' => 'string');
