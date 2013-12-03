@@ -48,13 +48,13 @@
 					    <span class="icon-bar"></span>
 				  	    <span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Indoor Dust Monitoring System</a>
+					<a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Indoor Dust Monitoring Page</a>
 				</div>
 				
 				  <!-- Collect the nav links, forms, and other content for toggling -->
 				  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/">Home</a></li>
+						<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/"><span class="glyphicon glyphicon-home">Home</span></a></li>
 						<li><a id="list"href="http://117.16.146.81/dust-portal/list.php">List</a></li>
 						<li><a id="chart"href="http://117.16.146.81/dust-portal/chart.php">Chart</a></li>
 						<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php">Settings</a></li>
