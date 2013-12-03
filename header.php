@@ -39,7 +39,8 @@
 				<h3 class="text-muted text-center"><a class="title" href="http://117.16.146.81/dust-portal/"><strong>Real-time Indoor Dust Monitoring System</strong></a></h3>
 				<ul class="nav nav-tabs nav-justified">
 					<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/">Home</a></li>
-					<li><a id="charts"href="http://117.16.146.81/dust-portal/charts.php">Charts</a></li>
+					<li><a id="list"href="http://117.16.146.81/dust-portal/list.php">List</a></li>
+					<li><a id="chart"href="http://117.16.146.81/dust-portal/chart.php">Chart</a></li>
 					<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php">Settings</a></li>
 				</ul>
 			</div>

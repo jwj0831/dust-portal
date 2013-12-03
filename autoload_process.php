@@ -14,14 +14,14 @@ if(!is_numeric($group_number)){
 $position = ($group_number * $items_per_group);
 
 //Limit our results within a specified range. 
-$results = $mysqli->query("SELECT * FROM dust_val ORDER BY id DESC LIMIT  $position, $items_per_group");
+$results = $mysqli->query("SELECT * FROM dust_data ORDER BY id DESC LIMIT  $position, $items_per_group");
 
 if ($results) { 
     //output results from database
     
     while($obj = $results->fetch_object())
     {
-        echo '<div class="col-lg"><span class="default-label-info">Time: ' . $obj->measured_time . '</span>  Value: <span class="badge">' . $obj->val . '</span></div>';
+        echo '<div class="col-lg">ID: '.$obj->id.' <span class="default-label-info">Time: ' . $obj->timestamp . '</span>  Value: <span class="badge">' . $obj->raw_data . '</span>IDI: '.$obj->idi_data.'</div>';
 	}
 
 }
