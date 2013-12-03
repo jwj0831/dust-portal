@@ -18,9 +18,8 @@ include ("header.php");
 				data.addColumn({type: 'string', role: 'annotation'});
 				var options = {
 					title: 'Raw Dust Info',
-					legend: 'left',
+					legend: 'bottom',
 					height: 400,
-					hAxis.title: 'Timestamp',
 					pointSize: 5
 				};
 			
