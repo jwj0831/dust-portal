@@ -5,7 +5,7 @@ include ("header.php");
 			google.load("visualization", "1", {packages:["corechart"]});
 			google.setOnLoadCallback(drawChart);
 			function drawChart() {
-				var jsonData = $.ajax({
+				var jsonData = jQuery.ajax({
 					url: "chart_process.php",
 					dataType:"json",
 					async: false
