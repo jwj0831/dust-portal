@@ -14,10 +14,10 @@ else if(currentPage == "chart.php") {
 	jQuery("#settings").parent().removeClass("active");
 }
 else if(currentPage == "settings.php") {
-	$("#home").parent().removeClass("active");
-	$("#list").parent().removeClass("active");
-	$("#chart").parent().removeClass("active");
-	$("#settings").parent().addClass("active");
+	$('#home').parent().removeClass("active");
+	$('#list').parent().removeClass("active");
+	$('#chart').parent().removeClass("active");
+	$('#settings').parent().addClass("active");
 }
 else{
 	//Prototype js
