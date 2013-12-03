@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 	
-	if( screen.width <= 800 ){
+	if( jQuery(window).width() <= 800 ){
 		jQuery("#title-bar").innerHTML("Indoor Dust");
 	}
 	
