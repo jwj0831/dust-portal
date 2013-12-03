@@ -6,7 +6,7 @@ include ("header.php");
 			google.setOnLoadCallback(drawChart);
 			function drawChart() {
 			var jsonData = $.ajax({
-			url: “getData_json.php”,
+			url: “chart_process.php”,
 			dataType:”json”,
 			async: false
 			}).responseText;
