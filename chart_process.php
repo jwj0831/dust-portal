@@ -6,14 +6,14 @@ echo '{ "cols": [ {"id":"","label":"year","type":"string"}, {"id":"","label":"sa
 
 include("config.inc.php"); //include config file
 
-$result = $mysqli->query("SELECT timestamp, raw_data FROM dust_data ORDER BY id DESC LIMIT 0, 40");
+$result = $mysqli->query("SELECT id, raw_data FROM dust_data ORDER BY id DESC LIMIT 0, 40");
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$data['cols'][] = array('type' => 'string', 'label' => 'timestamp');
+$data['cols'][] = array('type' => 'number', 'label' => 'id');
 $data['cols'][] = array('type' => 'number', 'label' => 'raw_data');
 
 foreach($rows as $row){
-	$data['rows'][] = array('c' => array( array('v' => $row['timestamp']), array('v' => $row['raw_data']) ) );
+	$data['rows'][] = array('c' => array( array('v' => $row['id']), array('v' => $row['raw_data']) ) );
 }
 
 echo json_encode($data);
