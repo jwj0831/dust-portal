@@ -18,13 +18,14 @@ switch($idi){
 		$idi_string = "Severe";
 		break;
 }
-
-$result->close();
+$result->free();
 
 $result = $mysqli->query("SELECT max_val FROM max_data ORDER BY id DESC LIMIT 0, 1");
 $obj = $result->fetch_object();
 $max_data = $obj->max_val;
-$result->close();
+
+$result->free();
+$mysqli->close();
 //$time = strtotime($dateInUTC.'KST');
 //$dateInLocal = date("Y-m-d H:i:s",$time);
 

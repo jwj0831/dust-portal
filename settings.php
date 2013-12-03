@@ -11,7 +11,8 @@ $hc = $obj->hc;
 $hrc = $obj->hrc;
 $window = $obj->window;
 
-$result->close();
+$result->free();
+$mysqli->close();
 
 include ("header.php");
 ?>

@@ -12,6 +12,7 @@ $stmt = $mysqli->prepare("UPDATE dust_conf SET lc = ?, lrc = ?, mc = ?, mrc = ?,
 $stmt->bind_param('iiiiiii', $lc, $lrc, $mc, $mrc, $hc, $hrc, $window);
 $stmt->execute();
 $stmt->close();
+$mysqli->close();
 
 header("Location: http://117.16.146.81/dust-portal");
 exit();

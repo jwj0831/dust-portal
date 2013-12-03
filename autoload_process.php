@@ -26,5 +26,6 @@ if ($results) {
 
 }
 unset($obj);
+$result->free();
 $mysqli->close();
 ?>
