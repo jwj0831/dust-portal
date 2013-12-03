@@ -54,10 +54,10 @@
 				  <!-- Collect the nav links, forms, and other content for toggling -->
 				  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/"><span class="glyphicon glyphicon-home">Home</span></a></li>
-						<li><a id="list"href="http://117.16.146.81/dust-portal/list.php">List</a></li>
-						<li><a id="chart"href="http://117.16.146.81/dust-portal/chart.php">Chart</a></li>
-						<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php">Settings</a></li>
+						<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/"><span class="glyphicon glyphicon-home"> Home</span></a></li>
+						<li><a id="list"href="http://117.16.146.81/dust-portal/list.php"><span class="glyphicon glyphicon-list"> List</a></li>
+						<li><a id="chart"href="http://117.16.146.81/dust-portal/chart.php"><span class="glyphicon glyphicon-stats"> Chart</a></li>
+						<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php"><span class="glyphicon glyphicon-cog"> Settings</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</nav>

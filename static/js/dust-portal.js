@@ -1,22 +1,9 @@
 jQuery(document).ready(function() {
 	
-	function mainTitle(){
-		if( jQuery(window).width() <= 800 ){
-			jQuery("#title-bar").text("Indoor Dust");
-		}
+	if( jQuery(window).width() <= 500 ){
+		jQuery("#title-bar").text("Indoor Dust Monitor");
 	}
-	
-	mainTitle();
-	
-	function resizeHandler () {
-        mainTitle();
-    }
-    if (window.addEventListener) {
-        window.addEventListener('resize', resizeHandler, false);
-    }
-    else if (window.attachEvent) {
-        window.attachEvent('onresize', resizeHandler);
-    }
+
 	
 	var pathArray = window.location.pathname.split( '/' );
 	var currentPage = pathArray[2];
