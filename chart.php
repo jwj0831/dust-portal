@@ -16,7 +16,7 @@ include ("header.php");
 			// Create our data table out of JSON data loaded from server.
 			var data = new google.visualization.DataTable(jsonData);
 			var options = {
-				width: 100%, height: 100%,
+				width: '100%', height: '100%',
 				title: 'Raw Dust Info'
 			};
 			
