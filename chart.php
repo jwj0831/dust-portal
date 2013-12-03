@@ -15,7 +15,7 @@ include ("header.php");
 			var data = new google.visualization.DataTable(jsonData);
 			var options = {
 				width: 800, height: 480,
-				title: 'Company Performance'
+				title: 'Raw Dust Info'
 			};
 			
 			var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
