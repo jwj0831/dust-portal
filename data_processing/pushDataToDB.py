@@ -33,8 +33,9 @@ def getLatestData(curs, num):
 
 def getMailUserPassword(curs):
 	curs.execute("""SELECT password FROM mail_user WHERE id = 'mustardenial@gmail.com'""");
-	result = curs.fetchone()
-	return result[0]
+	results = curs.fetchone()
+	password = result[0]
+	return password
 
 def checkBeforeData(curs):
 	curs.execute('SELECT COUNT(id) FROM dust_data');
