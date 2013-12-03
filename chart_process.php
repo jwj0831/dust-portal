@@ -4,10 +4,12 @@ $result = $mysqli->query("SELECT timestamp, raw_data, FROM dust_data ORDER BY id
 $obj = $result->fetch_object();
 
 $data[0] = array('time','dust_cnt');
-for($i=1; $i<21; $i++ ){
-	$data[$i] = array($obj->timestamp, $obj->raw_data );
-	
+$i=1;
+while($obj = $results->fetch_object()){
+	$data[$i++] = array($obj->timestamp, $obj->raw_data );	
 }
+
+
 echo json_encode($data);
 
 $result->close();
