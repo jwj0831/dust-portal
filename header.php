@@ -32,7 +32,11 @@
 		<![endif]-->
 		<script>
 			var pathArray = window.location.pathname.split( '/' );
+			var currentPage = pathArray[0];
+			alert(currentPage);
 			var currentPage = pathArray[1];
+			alert(currentPage);
+			var currentPage = pathArray[2];
 			alert(currentPage);
 			
 			if(currentPage == "charts.php") {
