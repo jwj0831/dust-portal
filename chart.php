@@ -16,7 +16,6 @@ include ("header.php");
 				// Create our data table out of JSON data loaded from server.
 				var data = new google.visualization.DataTable(jsonData);
 				var options = {
-					width: '100%', height: '100%',
 					title: 'Raw Dust Info'
 				};
 			
@@ -33,11 +32,11 @@ include ("header.php");
 			        window.attachEvent('onresize', resizeHandler);
 			    }
 				
-				}
+			}
 			
 			
 			</script>
-			<div id="chart_div" style="width: 900px; height: 500px;"></div>
+			<div id="chart_div"></div>
 		
 			<div class="footer text-center">
 				Copyright at <strong>K2V</strong> in 2013 Fusion Project Class
