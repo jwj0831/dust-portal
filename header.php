@@ -36,7 +36,6 @@
 		<script>
 			var pathArray = window.location.pathname.split( '/' );
 var currentPage = pathArray[2];
-alert(currentPage);
 
 if(currentPage == "list.php") {
 	jQuery("#home").parent().removeClass("active");
