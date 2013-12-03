@@ -22,7 +22,7 @@ if ($results) {
     while($obj = $results->fetch_object())
     {
     	$idi_string = "";
-		switch($obj->idi_data){
+		switch($obj->idicl_data){
 			case 0:
 				$idi_string = "Good";
 				break;
@@ -38,6 +38,6 @@ if ($results) {
 
 }
 unset($obj);
-$result->free();
+$results->free();
 $mysqli->close();
 ?>
