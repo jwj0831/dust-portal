@@ -9,8 +9,19 @@ $mysqli->close();
 
 include ("header.php");
 ?>
-			<div id="results">
-			</div>
+			<table class="table table-striped" >
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Timestamp</th>
+						<th scope="col">Raw_Data</th>
+						<th scope="col">IDI</th>
+					</tr>
+				</thead>
+				<tbody id="results">
+					
+				</tbody>
+			</table>
 			<div class="animation_image" style="display:none" align="center">
 				<img src="ajax-loader.gif">
 			</div>
