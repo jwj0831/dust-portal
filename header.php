@@ -48,7 +48,7 @@
 					    <span class="icon-bar"></span>
 				  	    <span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Indoor Dust Monitoring Page</a>
+					<a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Realitme Indoor Dust Monitoring Page</a>
 				</div>
 				
 				  <!-- Collect the nav links, forms, and other content for toggling -->

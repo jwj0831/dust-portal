@@ -1,4 +1,10 @@
 jQuery(document).ready(function() {
+	
+	if( screen.width <= 800 ){
+		jQuery("#title-bar").innerHTML("Indoor Dust");
+	}
+	
+	
 	var pathArray = window.location.pathname.split( '/' );
 	var currentPage = pathArray[2];
 	
