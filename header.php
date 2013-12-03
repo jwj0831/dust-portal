@@ -32,38 +32,8 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
-		<!--<script type="text/javascript" src="./static/js/dust-portal.js"></script>-->
-		<script>
-			var pathArray = window.location.pathname.split( '/' );
-var currentPage = pathArray[2];
+		<<script type="text/javascript" src="./static/js/dust-portal.js"></script>
 
-if(currentPage == "list.php") {
-	jQuery("#home").parent().removeClass("active");
-	jQuery("#list").parent().addClass("active");
-	jQuery("#chart").parent().removeClass("active");
-	jQuery("#settings").parent().removeClass("active");
-}
-else if(currentPage == "chart.php") {
-	jQuery("#home").parent().removeClass("active");
-	jQuery("#list").parent().removeClass("active");
-	jQuery("#chart").parent().addClass("active");
-	jQuery("#settings").parent().removeClass("active");
-}
-else if(currentPage == "settings.php") {
-	jQuery("#home").parent().removeClass("active");
-	jQuery("#list").parent().removeClass("active");
-	jQuery("#chart").parent().removeClass("active");
-	jQuery("#settings").parent().addClass("active");
-}
-else{
-	//Prototype js
-	new Ajax.PeriodicalUpdater('clock', 'clock.php', {method: 'get', frequency: 1 });
-	jQuery("#home").parent().addClass("active");
-	jQuery("#list").parent().removeClass("active");
-	jQuery("#chart").parent().removeClass("active");
-	jQuery("#settings").parent().removeClass("active");
-}
-		</script>
 	</head>
 
 	<body>
