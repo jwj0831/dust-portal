@@ -8,18 +8,18 @@ from email.mime.text import MIMEText
 """
 ----------Function Declaration----------
 """
-def send_email(message,  password, subject="Dust Monitoring Notification", addr='jwj0831@gmail.com'):
+def send_email(message,  password, subject="Dust Monitoring Notification",from_addr='mustardenial@gmail.com', to_addr='jwj0831@gmail.com'):
 	msg = MIMEText(message)
 	msg['subject'] = subject
-	msg['From'] = addr
-	msg['To'] = addr
+	msg['From'] = from_addr
+	msg['To'] = to_addr
 	
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.ehlo()
 	server.starttls()
 	server.ehlo()
-	server.login(addr, password)
-	server.sendmail(addr,addr, msg.as_string())
+	server.login(from_addr, password)
+	server.sendmail(from_addr, to_addr, msg.as_string())
 	server.close()
 
 
@@ -32,7 +32,7 @@ def getLatestData(curs, num):
 	return latest_list_in_window
 
 def getMailUserPassword(curs):
-	curs.execute("""SELECT password FROM mail_user WHERE id = 'jwj0831@gmail.com'""");
+	curs.execute("""SELECT password FROM mail_user WHERE id = 'mustardenial@gmail.com'""");
 	result = curs.fetchone()
 	return result
 
