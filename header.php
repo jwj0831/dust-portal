@@ -39,6 +39,31 @@
 
 	<body>
 		<div class="container">
+			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar .glyphicon .glyphicon-home">Home</span>
+		            <span class="icon-bar .glyphicon .glyphicon-list">List</span>
+		            <span class="icon-bar .glyphicon .glyphicon-stats">Chart</span>
+		            <span class="icon-bar glyphicon .glyphicon-cog">Settings</span>
+		          </button>
+		          <a class="navbar-brand" href="#">Real-time Indoor Dust Monitoring System</a>
+		        </div>
+		        <!--
+		        <div class="navbar-collapse collapse">
+		          <form class="navbar-form navbar-right">
+		            <div class="form-group">
+		              <input type="text" placeholder="Email" class="form-control">
+		            </div>
+		            <div class="form-group">
+		              <input type="password" placeholder="Password" class="form-control">
+		            </div>
+		            <button type="submit" class="btn btn-success">Sign in</button>
+		          </form>
+		        </div>--><!--/.navbar-collapse -->
+		    </div>
+			
 			<div class="header">
 				<h3 class="text-muted text-center"><a class="title" href="http://117.16.146.81/dust-portal/"><strong>Real-time Indoor Dust Monitoring System</strong></a></h3>
 				<ul class="nav nav-tabs nav-justified">
