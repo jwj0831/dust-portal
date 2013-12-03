@@ -1,10 +1,28 @@
 import serial
 import MySQLdb
 import datetime
+import smtplib
+from email.mime.text import MIMEText 
+
 
 """
 ----------Function Declaration----------
 """
+def send_email(message,  password, subject="Dust Monitoring Notification", addr='jwj0831@gmail.com'):
+	msg = MIMEText(message)
+	msg['subject'] = subject
+	msg['From'] = addr
+	msg['To'] = addr
+	
+	server = smtplib.SMTP('smtp.gmail.com', 587)
+	server.ehlo()
+	server.starttls()
+	server.ehlo()
+	server.login(addr, password)
+	server.sendmail(from_addr, to_addr, msg.as_string())
+	server.close()
+
+
 def getLatestData(curs, num):
 	latest_list_in_window = []
 	curs.execute("""SELECT raw_data FROM dust_data ORDER BY id DESC LIMIT 0, %s """, ( num ))
@@ -12,6 +30,11 @@ def getLatestData(curs, num):
 	for rs in results:
 		latest_list_in_window.append(float(rs[0]))
 	return latest_list_in_window
+
+def getMailUserPassword(curs):
+	curs.execute(""""SELECT password FROM mail_user where id = 'jwj0831@gmail.com'""");
+	result = curs.fetchone()
+	return result
 
 def checkBeforeData(curs):
 	curs.execute('SELECT COUNT(id) FROM dust_data');
@@ -60,6 +83,7 @@ max_data = getMaxData(curs)
 dayFormat = datetime.date.today()
 currentDay = dayFormat.day
 conf_dic = getConfigurationDic(curs)
+mail_password = getMailUserPassword(curs)
 """
 ----------------------------------------
 """
@@ -87,6 +111,9 @@ while 1 :
 		
 		if hc_frq > conf_dic['hrc']:
 			idi = 2;
+			msg = "Current Indoor Dust Envionment is Severe!!!"
+			send_email(msg, mail_password)
+			
 		elif mc_frq > conf_dic['mrc']:
 			idi = 1;
 		else:
