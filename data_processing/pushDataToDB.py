@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 """
 ----------Function Declaration----------
 """
-def send_email(message,  password, subject="Dust Monitoring Notification",from_addr='mustardenial@gmail.com', to_addr='jwj0831@gmail.com'):
+def send_email(message,  password, subject="Dust Monitoring Notification", from_addr='mustardenial@gmail.com', to_addr='jwj0831@gmail.com'):
 	msg = MIMEText(message)
 	msg['subject'] = subject
 	msg['From'] = from_addr
@@ -34,7 +34,7 @@ def getLatestData(curs, num):
 def getMailUserPassword(curs):
 	curs.execute("""SELECT password FROM mail_user WHERE id = 'mustardenial@gmail.com'""");
 	result = curs.fetchone()
-	return result
+	return result[0]
 
 def checkBeforeData(curs):
 	curs.execute('SELECT COUNT(id) FROM dust_data');
