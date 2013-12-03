@@ -66,7 +66,7 @@ conf_dic = getConfigurationDic(curs)
 
 while 1 :
 	# Read the data from Serial Cable...
-	dustVal = ser.readline()
+	dustVal = ser.readexitline()
 	convVal = str(round(float(dustVal), 3))
 	
 	# Insert Sensor Data to DB with indoor dust index(idi)
