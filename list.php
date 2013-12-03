@@ -29,7 +29,7 @@ include ("header.php");
 				jQuery('#results').load("autoload_process.php", {'group_no' : track_load}, function() {track_load++;}); //load first group
 
 				jQuery(window).scroll(function() {//detect page scroll
-					if ($(window).scrollTop() + $(window).height() == $(document).height())//user scrolled to bottom of the page?
+					if (jQuery(window).scrollTop() + jQuery(window).height() == jQuery(document).height())//user scrolled to bottom of the page?
 					{
 						if (track_load <= total_groups && loading == false)//there's more data to load
 						{
