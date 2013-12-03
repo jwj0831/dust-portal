@@ -21,7 +21,7 @@ include ("header.php");
 		</footer>
 
 		<script>
-			$(document).ready(function() {
+			jQuery(document).ready(function() {
 				var track_load = 0; //total loaded record group(s)
 				var loading  = false; //to prevents multipal ajax loads
 				var total_groups = <?php echo $total_groups; ?>;//total record group(s)
