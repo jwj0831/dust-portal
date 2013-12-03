@@ -39,33 +39,25 @@
 
 	<body>
 		<div class="container">
-			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		        <div class="navbar-header">
-		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		            <!--<span class="sr-only">Toggle navigation</span>-->
-		            <span class="icon-bar glyphicon glyphicon-home"></span>
-		            <span class="icon-bar glyphicon glyphicon-list"></span>
-		            <span class="icon-bar glyphicon glyphicon-stats"></span>
-		            <span class="icon-bar glyphicon glyphicon-cog"></span>
-		          </button>
-		          <a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Indoor Dust Monitoring System</a>
-		        </div>
-		        <div class="collapse navbar-collapse">
-		        	<ul class="nav navbar-nav">
-			            <li class="active"><a id="home" href="http://117.16.146.81/dust-portal/">Home</a></li>
+			<nav class="navbar navbar-default" role="navigation">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+				  	    <span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Indoor Dust Monitoring System</a>
+				</div>
+				
+				  <!-- Collect the nav links, forms, and other content for toggling -->
+				  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/">Home</a></li>
 						<li><a id="list"href="http://117.16.146.81/dust-portal/list.php">List</a></li>
 						<li><a id="chart"href="http://117.16.146.81/dust-portal/chart.php">Chart</a></li>
 						<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php">Settings</a></li>
-		        	</ul>
-		        </div><!--/.nav-collapse -->
-		    </div>
-			
-			<div class="header">
-				<h3 class="text-muted text-center"><a class="title" href="http://117.16.146.81/dust-portal/"><strong>Real-time Indoor Dust Monitoring System</strong></a></h3>
-				<ul class="nav nav-tabs nav-justified">
-					<li class="active"><a id="home" href="http://117.16.146.81/dust-portal/">Home</a></li>
-					<li><a id="list"href="http://117.16.146.81/dust-portal/list.php">List</a></li>
-					<li><a id="chart"href="http://117.16.146.81/dust-portal/chart.php">Chart</a></li>
-					<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php">Settings</a></li>
-				</ul>
-			</div>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</nav>
