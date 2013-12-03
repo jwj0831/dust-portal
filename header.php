@@ -30,29 +30,7 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
-		<script>
-			var pathArray = window.location.pathname.split( '/' );
-			alert(pathArray);
-			var currentPage = pathArray[2];
-			alert(currentPage);
-			
-			if(currentPage == "charts.php") {
-				$("#home").parent().removeClass();
-				$("#charts").parent().addClass("active");
-				$("#settings").parent().removeClass();
-			}
-			else if(currentPage == "settings.php") {
-				$("#home").parent().removeClass();
-				$("#charts").parent().removeClass();
-				$("#settings").parent().addClass("active");
-			}
-			else{
-				$("#home").parent().addClass("active");
-				$("#charts").parent().removeClass();
-				$("#settings").parent().removeClass();
-			}
-			
-		</script>
+
 	</head>
 
 	<body>
