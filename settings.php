@@ -15,7 +15,6 @@ $result->close();
 
 include ("header.php");
 ?>
-			
 			<form method="post" role="form" action="./setting_update.php">
 				<div class="form-group">
 			    	<label for="lc">Lower Constant: </label>
