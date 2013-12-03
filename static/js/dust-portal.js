@@ -22,22 +22,6 @@ else if(currentPage == "settings.php") {
 else{
 	//Prototype js
 	new Ajax.PeriodicalUpdater('clock', 'clock.php', {method: 'get', frequency: 1 });
-	jQuery(document).ready(function() {
-		var idi = parseInt(<?= $idi; ?>);// idi_number;
-		switch (idi) {
-			case 0:
-				jQuery("#symbol-info").css( {"background-color": "#f5bb63" });
-			  	break;
-			case 1:
-			 	jQuery("#symbol-info").css( {"background-color": "#e8703e" });
-			  	break;
-			case 2:
-			 	jQuery("#symbol-info").css( {"background-color": "#d33431" });
-			  	break;
-			default:
-			  $("#symbol-info").css( {"background-color": "#f5bb63" });
-		}
-	});
 				
 	jQuery("#home").parent().addClass("active");
 	jQuery("#list").parent().removeClass("active");
