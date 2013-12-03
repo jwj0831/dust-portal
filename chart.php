@@ -16,8 +16,9 @@ include ("header.php");
 				// Create our data table out of JSON data loaded from server.
 				var data = new google.visualization.DataTable(jsonData);
 				var options = {
-					title: 'Raw Dust Info'
-					height: 400px;
+					title: 'Raw Dust Info',
+					height: 400,
+					pointSize: 5
 				};
 			
 				var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
