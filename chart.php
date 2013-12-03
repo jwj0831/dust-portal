@@ -20,7 +20,7 @@ include ("header.php");
 					title: 'Raw Dust Info',
 					legend: 'left',
 					height: 400,
-					hAxis.title: 'Timestamp'
+					hAxis.title: 'Timestamp',
 					pointSize: 5
 				};
 			
