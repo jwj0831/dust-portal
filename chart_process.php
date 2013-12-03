@@ -11,8 +11,8 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 $data['cols'][] = array('type' => 'string', 'label' => 'timestamp');
 $data['cols'][] = array('type' => 'number', 'label' => 'raw_data');
 
-foreach($result->fetch_all(MYSQLI_ASSOC)){
-	$data['rows'][] = array('c' => array( 'v' => $row['timestamp'], 'v' => doubleval($row['raw_data']) ) );
+foreach($rows as $row){
+	$data['rows'][] = array('c' => array( 'v' => $row['timestamp'], 'v' => $row['raw_data'] ) );
 }
 
 echo json_encode($data);
