@@ -34,8 +34,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
 		<!-- Load Google JSAPI -->
     	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<<script type="text/javascript" src="./static/js/dust-portal.js"></script>
-
+		<script type="text/javascript" src="./static/js/dust-portal.js"></script>
 	</head>
 
 	<body>
