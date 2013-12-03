@@ -9,7 +9,7 @@ $mysqli->close();
 
 include ("header.php");
 ?>
-			<table class="table table-striped" >
+			<table class="table table-condensed" >
 				<thead>
 					<tr>
 						<th scope="col">ID</th>

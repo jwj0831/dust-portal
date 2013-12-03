@@ -21,7 +21,19 @@ if ($results) {
     
     while($obj = $results->fetch_object())
     {
-        echo '<tr> <th scope="row">'.$obj->id.'</th><td>'.$obj->timestamp.'</td><td>'.$obj->raw_data.'</td><td>'.$obj->idi_data.'</td>';          
+    	$idi_string = "";
+		switch($obj->idi_data){
+			case 0:
+				$idi_string = "Good";
+				break;
+			case 1:
+				$idi_string = "Not Bad";
+				break;
+			case 2:
+				$idi_string = "Severe";
+				break;
+		}
+        echo '<tr><th>'.$obj->timestamp.'</th><td>'.$obj->raw_data.'</td><td>'.$idi_string.'</td>';          
 	}
 
 }
