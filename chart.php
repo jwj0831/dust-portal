@@ -17,6 +17,7 @@ include ("header.php");
 				var data = new google.visualization.DataTable(jsonData);
 				var options = {
 					title: 'Raw Dust Info'
+					height: 400px;
 				};
 			
 				var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
