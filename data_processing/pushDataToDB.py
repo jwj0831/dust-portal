@@ -32,7 +32,7 @@ def getLatestData(curs, num):
 	return latest_list_in_window
 
 def getMailUserPassword(curs):
-	curs.execute(""""SELECT password FROM mail_user where id = 'jwj0831@gmail.com'""");
+	curs.execute("""SELECT password FROM mail_user WHERE id = 'jwj0831@gmail.com'""");
 	result = curs.fetchone()
 	return result
 
