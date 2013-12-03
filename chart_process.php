@@ -1,10 +1,7 @@
 <?php
 include("config.inc.php"); //include config file
 $result = $mysqli->query("SELECT timestamp, raw_data, FROM dust_data ORDER BY id DESC LIMIT 0, 20");
-while($row = $result->fetch_array(MYSQLI_ASSOC))
-{
-	$rows[] = $row;
-}
+$rows = $result->fetch_all(MYSQLI_ASSOC))
 
 $data[0] = array('time','dust_cnt');
 $i=1;
