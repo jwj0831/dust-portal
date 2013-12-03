@@ -42,13 +42,13 @@
 			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		        <div class="navbar-header">
 		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		            <span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar .glyphicon .glyphicon-home"></span>
-		            <span class="icon-bar .glyphicon .glyphicon-list"></span>
-		            <span class="icon-bar .glyphicon .glyphicon-stats"></span>
-		            <span class="icon-bar glyphicon .glyphicon-cog"></span>
+		            <!--<span class="sr-only">Toggle navigation</span>-->
+		            <span class="icon-bar glyphicon glyphicon-home"></span>
+		            <span class="icon-bar glyphicon glyphicon-list"></span>
+		            <span class="icon-bar glyphicon glyphicon-stats"></span>
+		            <span class="icon-bar glyphicon glyphicon-cog"></span>
 		          </button>
-		          <a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Real-time Indoor Dust Monitoring System</a>
+		          <a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Indoor Dust Monitoring System</a>
 		        </div>
 		        <div class="collapse navbar-collapse">
 		        	<ul class="nav navbar-nav">
