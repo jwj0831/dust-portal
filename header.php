@@ -33,7 +33,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
-		<script src="./static/js/dust-portal.js"></script>
+		<script type="text/javascript" src="./static/js/dust-portal.js"></script>
 	</head>
 
 	<body>
