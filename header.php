@@ -43,25 +43,21 @@
 		        <div class="navbar-header">
 		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		            <span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar .glyphicon .glyphicon-home">Home</span>
-		            <span class="icon-bar .glyphicon .glyphicon-list">List</span>
-		            <span class="icon-bar .glyphicon .glyphicon-stats">Chart</span>
-		            <span class="icon-bar glyphicon .glyphicon-cog">Settings</span>
+		            <span class="icon-bar .glyphicon .glyphicon-home"></span>
+		            <span class="icon-bar .glyphicon .glyphicon-list"></span>
+		            <span class="icon-bar .glyphicon .glyphicon-stats"></span>
+		            <span class="icon-bar glyphicon .glyphicon-cog"></span>
 		          </button>
-		          <a class="navbar-brand" href="#">Real-time Indoor Dust Monitoring System</a>
+		          <a class="navbar-brand" href="http://117.16.146.81/dust-portal/">Real-time Indoor Dust Monitoring System</a>
 		        </div>
-		        <!--
-		        <div class="navbar-collapse collapse">
-		          <form class="navbar-form navbar-right">
-		            <div class="form-group">
-		              <input type="text" placeholder="Email" class="form-control">
-		            </div>
-		            <div class="form-group">
-		              <input type="password" placeholder="Password" class="form-control">
-		            </div>
-		            <button type="submit" class="btn btn-success">Sign in</button>
-		          </form>
-		        </div>--><!--/.navbar-collapse -->
+		        <div class="collapse navbar-collapse">
+		        	<ul class="nav navbar-nav">
+			            <li class="active"><a id="home" href="http://117.16.146.81/dust-portal/">Home</a></li>
+						<li><a id="list"href="http://117.16.146.81/dust-portal/list.php">List</a></li>
+						<li><a id="chart"href="http://117.16.146.81/dust-portal/chart.php">Chart</a></li>
+						<li><a id="settings"href="http://117.16.146.81/dust-portal/settings.php">Settings</a></li>
+		        	</ul>
+		        </div><!--/.nav-collapse -->
 		    </div>
 			
 			<div class="header">
