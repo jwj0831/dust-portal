@@ -9,29 +9,6 @@ jQuery(document).ready(function() {
 		jQuery("#settings").parent().removeClass("active");
 	}
 	else if(currentPage == "chart.php") {
-		google.load("visualization", "1", { packages: ["corechart"] });
-        google.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var jsonData = $.ajax({
-                url: "chart_process.php",
-                dataType: "json",
-                async: false
-            }).responseText;
-
-            var obj = window.JSON.stringify(jsonData);
-            var data = google.visualization.arrayToDataTable(obj);
-
-            var options = {
-                title: 'Raw Dust Value'
-            };
-
-            var chart = new google.visualization.LineChart(
-                        document.getElementById('chart_div'));
-            chart.draw(data, options);
-        }
-		
-		
 		jQuery("#home").parent().removeClass("active");
 		jQuery("#list").parent().removeClass("active");
 		jQuery("#chart").parent().addClass("active");
