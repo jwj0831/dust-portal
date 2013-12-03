@@ -22,7 +22,7 @@ if ($results) {
     while($obj = $results->fetch_object())
     {
     	$idi_string = "";
-		switch($obj->idicl_data){
+		switch($obj->idi_data){
 			case 0:
 				$idi_string = "Good";
 				break;

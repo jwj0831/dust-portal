@@ -12,7 +12,6 @@ include ("header.php");
 			<table class="table table-condensed" >
 				<thead>
 					<tr>
-						<th scope="col">ID</th>
 						<th scope="col">Timestamp</th>
 						<th scope="col">Raw_Data</th>
 						<th scope="col">IDI</th>
