@@ -6,11 +6,11 @@ echo '{ "cols": [ {"id":"","label":"year","type":"string"}, {"id":"","label":"sa
 
 include("config.inc.php"); //include config file
 
-$result = $mysqli->query("SELECT timestamp, raw_data FROM dust_data ORDER BY id DESC LIMIT 0, 20");
+$result = $mysqli->query("SELECT timestamp, raw_data FROM dust_data ORDER BY id DESC LIMIT 0, 40");
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-$data['cols'][] = array('type' => 'string');
-$data['cols'][] = array('type' => 'number');
+$data['cols'][] = array('type' => 'string', 'label' => 'timestamp');
+$data['cols'][] = array('type' => 'number', 'label' => 'raw_data');
 
 foreach($rows as $row){
 	$data['rows'][] = array('c' => array( array('v' => $row['timestamp']), array('v' => $row['raw_data']) ) );
