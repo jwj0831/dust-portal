@@ -12,7 +12,8 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 $data['cols'][] = array('type' => 'string', 'label' => 'timestamp');
 $data['cols'][] = array('type' => 'number', 'label' => 'raw_data');
 
-foreach($rows as $row){
+for($i=49; $i >= 0 ; $i--){
+	$row = $rows[$i];
 	$data['rows'][] = array('c' => array( array('v' => $row['timestamp']), array('v' => $row['raw_data']) ) );
 }
 
