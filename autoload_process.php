@@ -21,7 +21,7 @@ if ($results) {
     
     while($obj = $results->fetch_object())
     {
-        echo '<div class="col-lg">ID: '.$obj->id.' <span class="default-label-info">Time: ' . $obj->timestamp . '</span>  Value: <span class="badge">' . $obj->raw_data . '</span>IDI: '.$obj->idi_data.'</div>';
+        echo '<tr> <th scope="row">'.$obj->id.'</th><td>'.$obj->timestamp.'</td><td>'.$obj->raw_data.'</td><td>'.$obj->idi_data.'</td>';          
 	}
 
 }
