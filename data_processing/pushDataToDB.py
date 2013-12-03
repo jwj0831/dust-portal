@@ -19,7 +19,7 @@ def send_email(message,  password, subject="Dust Monitoring Notification", addr=
 	server.starttls()
 	server.ehlo()
 	server.login(addr, password)
-	server.sendmail(from_addr, to_addr, msg.as_string())
+	server.sendmail(addr,addr, msg.as_string())
 	server.close()
 
 
