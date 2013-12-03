@@ -1,5 +1,11 @@
 <?php
-include("config.inc.php"); //include config file
+$host_name = "localhost";
+$user_name = "root";
+$password = "1234";
+$db_name = "dust";
+$db =  mysql_connect($host_name , $user_name , $password);
+mysql_select_db($dbname);  
+	
 $sql = "SELECT timestamp, raw_data, FROM dust_data ORDER BY id DESC LIMIT 0, 20";
 $result = mysql_query($sql);    
 $num = mysql_num_rows($result);   
