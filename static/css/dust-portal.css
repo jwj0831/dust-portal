@@ -1,7 +1,15 @@
-
 .container {
 	max-width: 800px;
 }
+
+#navigation {
+	margin-top: 20px;
+}
+
+.navbar-nav{
+	float: right;
+}
+
 
 .row
 {

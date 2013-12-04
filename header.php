@@ -39,7 +39,7 @@
 
 	<body>
 		<div class="container">
-			<nav class="navbar navbar-default" role="navigation">
+			<nav id="navigation" class="navbar navbar-default" role="navigation">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -48,7 +48,7 @@
 					    <span class="icon-bar"></span>
 				  	    <span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" id="title-bar" href="http://117.16.146.81/dust-portal/">Real-tome Indoor Dust Monitoring Page</a>
+					<a class="navbar-brand" id="title-bar" href="http://117.16.146.81/dust-portal/">Real-time Indoor Dust Monitoring Page</a>
 				</div>
 				
 				  <!-- Collect the nav links, forms, and other content for toggling -->
