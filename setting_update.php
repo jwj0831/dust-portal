@@ -1,15 +1,13 @@
 <?php
 include ("config.inc.php");
-$lc = $_POST['lc'];
-$lrc = $_POST['lrc'];
-$mc = $_POST['mc'];
-$mrc = $_POST['mrc'];
-$hc = $_POST['hc'];
-$hrc = $_POST['hrc'];
-$window = $_POST['window'];
+$window = $_POST['pws'];
+$hc = $_POST['hrc'];
+$hrc = $_POST['rfhrc'];
+$mc = $_POST['mrc'];
+$mrc = $_POST['rfmrc'];
 
-$stmt = $mysqli->prepare("UPDATE dust_conf SET lc = ?, lrc = ?, mc = ?, mrc = ?, hc = ?, hrc = ?, window = ? WHERE id = 1");
-$stmt->bind_param('iiiiiii', $lc, $lrc, $mc, $mrc, $hc, $hrc, $window);
+$stmt = $mysqli->prepare("UPDATE dust_conf SET pws = ?, hrc = ?, rfhrc = ?, mrc = ?, rfmrc = ? WHERE id = 1");
+$stmt->bind_param('iiiii', $pws, $hrc, $rfhrc, $mrc, $rfmrc );
 $stmt->execute();
 $stmt->close();
 $mysqli->close();

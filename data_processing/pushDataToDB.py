@@ -4,7 +4,6 @@ import datetime
 import smtplib
 from email.mime.text import MIMEText 
 
-
 """
 ----------Function Declaration----------
 """
@@ -22,14 +21,13 @@ def send_email(message,  password, subject="Dust Monitoring Notification", from_
 	server.sendmail(from_addr, to_addr, msg.as_string())
 	server.close()
 
-
 def getLatestData(curs, num):
-	latest_list_in_window = []
+	llw = []
 	curs.execute("""SELECT raw_data FROM dust_data ORDER BY id DESC LIMIT 0, %s """, ( num ))
 	results = curs.fetchall()
 	for rs in results:
-		latest_list_in_window.append(float(rs[0]))
-	return latest_list_in_window
+		llw.append(float(rs[0]))
+	return llw
 
 def getMailUserPassword(curs):
 	curs.execute("""SELECT password FROM mail_user WHERE id = 'mustardenial@gmail.com'""");
@@ -59,19 +57,18 @@ def getMaxData(curs):
 def getConfigurationDic(curs):
 	curs.execute("""SELECT * FROM dust_conf""");
 	results= curs.fetchone()
-	temp_dic = {}	
-	temp_dic['lc'] = round(float(results[1]),2)
-	temp_dic['lrc'] = round(float(results[2]),2)
-	temp_dic['mc'] = round(float(results[3]),2)
-	temp_dic['mrc'] = int(results[4])
-	temp_dic['hc'] = round(float(results[5]),2)
-	temp_dic['hrc'] = int(results[6])
-	temp_dic['window'] = int(results[7])
+	temp_dic = {}
+	temp_dic['pws'] = int(results[1])
+	temp_dic['hrc'] = round(float(results[2]),2)
+	temp_dic['rfhrc'] = int(results[3])	
+	temp_dic['mrc'] = round(float(results[4]),2)
+	temp_dic['rfmrc'] = int(results[5])
 	return temp_dic
 	
 """
 ----------------------------------------
 """
+
 
 """
 ----------Default Configuration----------
@@ -89,6 +86,7 @@ mail_password = getMailUserPassword(curs)
 ----------------------------------------
 """
 
+
 while 1 :
 	# Read the data from Serial Cable...
 	dustVal = ser.readline()
@@ -97,29 +95,29 @@ while 1 :
 	# Insert Sensor Data to DB with indoor dust index(idi)
 	if start_cond_check_flag == True:
 		# calculate idi number
-		idi = 0;
-		conf_dic = getConfigurationDic(curs)
-		latest_list_in_window = getLatestData(curs, conf_dic['window'] )
+		idi = 0
+		hrc_frq = 0
+		mrc_frq = 0
+		conf_dic = getConfigurationDic(curs)		# load current setting configuration variables
+		llw = getLatestData(curs, conf_dic['pws'] )	# Latest List in Window
  
-		# compare between lower constant=0 and lower relatice constant
-		hc_frq = 0
-		mc_frq = 0
-		for i in range( conf_dic['window'] ):
-			if latest_list_in_window[i] > conf_dic['hc']:
-				hc_frq += 1
-			elif latest_list_in_window[i] > conf_dic['mc']:
-				mc_frq += 1
+ 		# Comparaison
+		for i in range( conf_dic['pws'] ):
+			if llw[i] > conf_dic['hrc']:
+				hrc_frq += 1
+			elif llw[i] > conf_dic['mrc']:
+				mrc_frq += 1
 		
-		if hc_frq > conf_dic['hrc']:
-			idi = 2;
+		if hrc_frq > conf_dic['rfhrc']:
+			idi = 2;		# Decided to "Severe"
 			msg = "Current Indoor Dust Envionment is Severe!!!"
 			send_email(msg, mail_password)
-			
-		elif mc_frq > conf_dic['mrc']:
-			idi = 1;
+		elif mrc_frq > conf_dic['rfmrc']:
+			idi = 1;		# Decided to "Not Bad"
 		else:
-			idi = 0;
-	
+			idi = 0;		# Decided to "Good"
+		
+		#Put data to DB
 		curs.execute( """INSERT INTO dust_data VALUES(default, default, %s, %s)""", (convVal, idi))
 		db.commit()
 
