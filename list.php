@@ -25,12 +25,7 @@ include ("header.php");
 				<img src="ajax-loader.gif">
 			</div>
 		</div><!-- /.container -->
-		<footer>
-			<p class="footer">
-				Copyright at NFM in 2013
-			</p>
-		</footer>
-
+		<div class="footer text-center">Copyright at <strong>K2V</strong> in 2013 Fusion Project Class</div>
 		<script>
 			jQuery(document).ready(function() {
 				var track_load = 0; //total loaded record group(s)
