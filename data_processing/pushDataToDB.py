@@ -39,7 +39,7 @@ def checkBeforeData(curs):
 	curs.execute('SELECT COUNT(id) FROM dust_data');
 	results = curs.fetchone()
 	rows = int(results[0])
-	if rows > 10:
+	if rows >= 10:
 		return True
 	else:
 		return False
@@ -121,22 +121,22 @@ while 1 :
 		curs.execute( """INSERT INTO dust_data VALUES(default, default, %s, %s)""", (convVal, idi))
 		db.commit()
 
-		#Max Value Check
-		newDayFormat = datetime.date.today()
-		newDay = newDayFormat.day
-		
-		if currentDay != newDay:
-			max_data = 0
-			currentDay = newDay
-		
-		if currentDay == newDay:	
-			if convVal > max_data:
-				max_data = convVal
-				convVal = str(convVal)
-				curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
-				db.commit()
-
 	else:
 		curs.execute( 'INSERT INTO dust_data VALUES(default, default,"%s", default)'% convVal )
 		db.commit()
 		start_cond_check_flag = checkBeforeData(curs)
+		
+	#Max Value Check
+	newDayFormat = datetime.date.today()
+	newDay = newDayFormat.day
+	
+	if currentDay != newDay:
+		max_data = 0
+		currentDay = newDay
+	
+	if currentDay == newDay:
+		if convVal > max_data:
+			max_data = convVal
+			convVal = str(convVal)
+			curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
+			db.commit()
