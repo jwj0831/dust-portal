@@ -1,9 +1,9 @@
 <?php
 include ("config.inc.php");
-$window = $_POST['pws'];
-$hc = $_POST['hrc'];
+$pws = $_POST['pws'];
+$hrc = $_POST['hrc'];
 $rfhrc = $_POST['rfhrc'];
-$mc = $_POST['mrc'];
+$mrc = $_POST['mrc'];
 $rfmrc = $_POST['rfmrc'];
 
 $stmt = $mysqli->prepare("UPDATE dust_conf SET pws = ?, hrc = ?, rfhrc = ?, mrc = ?, rfmrc = ? WHERE id = 1");
