@@ -90,7 +90,7 @@ mail_password = getMailUserPassword(curs)
 while 1 :
 	# Read the data from Serial Cable...
 	dustVal = ser.readline()
-	convVal = str(round(float(dustVal), 3))
+	convVal = round(float(dustVal), 3)
 	
 	# Insert Sensor Data to DB with indoor dust index(idi)
 	if start_cond_check_flag == True:
@@ -130,10 +130,11 @@ while 1 :
 			currentDay = newDay
 		
 		if currentDay == newDay:	
-			if float(convVal) > max_data:
+			if convVal > max_data:
+				max_data = convVal
+				convVal = str(convVal)
 				curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
 				db.commit()
-				max_data = float(convVal);
 
 	else:
 		curs.execute( 'INSERT INTO dust_data VALUES(default, default,"%s", default)'% convVal )
