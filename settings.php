@@ -36,7 +36,7 @@ include ("header.php");
 			    	<p class="help-block">This reference number is compared with the latest list's figures in past window for counting how many figures are higher than MRC, itself.</p>
 			  	</div>
 			  	<div class="form-group">
-			    	<label for="mrc">RFHRC(Reference Frequency of MRC): </label>
+			    	<label for="mrc">RFMRC(Reference Frequency of MRC): </label>
 			    	<input type="text" class="form-control" id="rfmrc" name="rfmrc" value="<?php echo $rfmrc;?>">
 			    	<p class="help-block">The minimum reference number for deciding "not bad" index.</p>
 			  	</div>			  	
