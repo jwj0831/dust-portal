@@ -13,7 +13,7 @@ include ("header.php");
 				<thead>
 					<tr>
 						<th scope="col">Timestamp</th>
-						<th scope="col">Raw_Data</th>
+						<th scope="col">Raw_Data (> 1 um particles/233mL)</th>
 						<th scope="col">IDI</th>
 					</tr>
 				</thead>
