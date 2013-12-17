@@ -17,12 +17,11 @@ include ("header.php");
 				var data = new google.visualization.DataTable(jsonData);
 				var options = {
 					title: 'Raw Dust Info',
-
-					height: 400,
-					pointSize: 5
+					seriesType: "line",
+          			series: {5: {type: "bars"}}
 				};
 			
-				var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+				var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
 				chart.draw(data, options);
 			
 				function resizeHandler () {
