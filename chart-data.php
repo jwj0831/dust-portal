@@ -16,8 +16,9 @@ for($i=49; $i >= 0 ; $i--){
 }
 */
 $x = time() * 1000;
+$y = rand(0,100)
 $row = $rows[0];
-$data = array($x, $row['idi_data']);
+$data = array($x, $y);
 echo json_encode($data);
 
 $result->free();
