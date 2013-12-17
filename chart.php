@@ -39,7 +39,7 @@ jQuery(document).ready(function() {
             text: 'Live random data'
         },
         xAxis: {
-            type: 'datetime',
+            type: 'linear',
             tickPixelInterval: 150,
             maxZoom: 20 * 1000
         },

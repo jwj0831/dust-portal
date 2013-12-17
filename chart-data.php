@@ -17,7 +17,7 @@ for($i=49; $i >= 0 ; $i--){
 */
 $x = time() * 1000;
 $y = rand(0,100);
-$z = (int) $row[2];
+$z = $row[2];
 
 $data = array($x, $z);
 echo json_encode($data);
