@@ -57,34 +57,31 @@ jQuery(document).ready(function() {
                     return this.value +'pcs/283mL';
                 },
                 style: {
-                    color: '#89A54E'
+                    color: '#4572A7'
                 }
             },
             title: {
                 text: 'Concentration (pcs/283mL)',
                 style: {
-                    color: '#89A54E'
+                    color: '#4572A7'
                 }
             },
-            opposite: true
-
         }, { // Secondary yAxis
             title: {
                 text: 'IDI',
                 style: {
-                    color: '#4572A7'
+                    color: '#C94D4D'
                 }
             },
             labels: {
                 style: {
-                    color: '#4572A7'
+                    color: '#C94D4D'
                 }
             },
 			min: 0,
 			max: 2,
         }],
         series: [{
-        		yAxis: 0,
                 name: 'Raw Dust Particles',
                 color: '#4572A7',
                 type: 'spline',
@@ -94,9 +91,8 @@ jQuery(document).ready(function() {
                 }
     
             }, {
-            	yAxis: 1,
                 name: 'IDI',
-                color: '#c94d4d',
+                color: '#C94D4D',
                 type: 'column',
                 tickInterval: 1,
                 data: []
