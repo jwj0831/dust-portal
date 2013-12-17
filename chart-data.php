@@ -15,7 +15,7 @@ for($i=49; $i >= 0 ; $i--){
 	$data['rows'][] = array('c' => array( array('v' => $row['timestamp']), array('v' => $row['raw_data']),array('v' => $row['idi_data']) ) );
 }
 */
-$x = $row[0] * 1000;
+$x = time() * 1000;
 $y = (float) $row[1];
 $z = (int) $row[2];
 

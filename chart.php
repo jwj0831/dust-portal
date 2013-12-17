@@ -78,8 +78,8 @@ jQuery(document).ready(function() {
                     color: '#C94D4D'
                 }
             },
-			min: 0,
-			max: 2,
+			min: -1,
+			max: 3,
 			opposite: true
         }],
         tooltip: {
