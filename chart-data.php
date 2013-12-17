@@ -1,4 +1,6 @@
 <?php
+header("Content-type: text/json");
+
 include("config.inc.php"); //include config file
 
 $result = $mysqli->query("SELECT timestamp, raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 1");
