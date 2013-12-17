@@ -25,15 +25,18 @@ if ($results) {
 		switch($obj->idi_data){
 			case 0:
 				$idi_string = "Good";
+				echo '<tr><th>'.$obj->timestamp.'</th><td>'.$obj->raw_data.'</td><td>'.$idi_string.'</td>';  
 				break;
 			case 1:
 				$idi_string = "Not Bad";
+				echo '<tr class="warning"><th>'.$obj->timestamp.'</th><td>'.$obj->raw_data.'</td><td>'.$idi_string.'</td>';  
 				break;
 			case 2:
 				$idi_string = "Severe";
+				echo '<tr class="danger"><th>'.$obj->timestamp.'</th><td>'.$obj->raw_data.'</td><td>'.$idi_string.'</td>';  
 				break;
 		}
-        echo '<tr><th>'.$obj->timestamp.'</th><td>'.$obj->raw_data.'</td><td>'.$idi_string.'</td>';          
+                
 	}
 
 }
