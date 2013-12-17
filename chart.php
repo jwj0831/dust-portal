@@ -95,7 +95,7 @@ jQuery(document).ready(function() {
                 color: '#89A54E',
                 type: 'spline',
                 data: []
-    	}
+    		}]
     });
 });			
 			
