@@ -29,13 +29,11 @@ function requestData() {
 }
 
 jQuery(document).ready(function() {
-	/*
 	Highcharts.setOptions({
 		global: {
 			useUTC: false
 		}
 	});
-	*/
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_area',
