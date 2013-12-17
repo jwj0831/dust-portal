@@ -31,12 +31,23 @@ $mysqli->close();
 
 include ("header.php");
 ?>
-			
 			<div id="top-row" class="row">
-				<div id="symbol-info" class="grid-block col-md-6 col-lg-6 text-center">
-						<span id="symbol-label" class="grid-label">Indoor</br> Dust Index</span></br>
-						<strong><span id="symbol-val"><?php echo $idi_string; ?></span></strong>
+				<div class="col-md-6 col-xs-12">
+					<div class="panel panel-default">
+					  	<div class="panel-heading">
+					    	<h3 class="panel-title">Current Indor Dust Index</h3>
+					  	</div>
+					  	<div class="panel-body">
+				    		<div id="symbol-info" class="grid-block col-md-6 col-lg-6 text-center">
+								<span id="symbol-label" class="grid-label">Indoor</br> Dust Index</span></br>
+								<strong><span id="symbol-val"><?php echo $idi_string; ?></span></strong>
+							</div>
+					  	</div>
+					</div>
 				</div>
+				
+				
+				
 				<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="clock-label" class="grid-label">Time</span></br>
 						<strong><span id="clock">Wait...</br>Server</span></strong>
