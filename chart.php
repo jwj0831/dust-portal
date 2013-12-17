@@ -13,14 +13,14 @@ function requestData() {
 	jQuery.ajax({
 	    url: 'chart-data.php',
 	    success: function(point) {
-	    	var series = chart.series[1];
+	    	var series = chart.series[0];
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
-	        var series = chart.series[2];
+	        var series = chart.series[1];
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
 	
 	        // add the point
-	        chart.series[1].addPoint(point, true, shift);
-	        chart.series[2].addPoint(point, true, shift);
+	        chart.series[0].addPoint(point[1], true, shift);
+	        chart.series[1].addPoint(point[2], true, shift);
 	        // call it again after one second
 	        setTimeout(requestData, 1000);    
 	    },
