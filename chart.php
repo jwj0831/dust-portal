@@ -13,14 +13,14 @@ function requestData() {
 	jQuery.ajax({
 	    url: 'chart-data.php',
 	    success: function(point) {
-	    	var series = chart.series[0];
+	    	var series = chart.series[1];
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
-	        var series = chart.series[1];
+	        var series = chart.series[2];
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
 	
 	        // add the point
-	        chart.series[0].addPoint(point, true, shift);
 	        chart.series[1].addPoint(point, true, shift);
+	        chart.series[2].addPoint(point, true, shift);
 	        // call it again after one second
 	        setTimeout(requestData, 1000);    
 	    },
@@ -85,7 +85,7 @@ jQuery(document).ready(function() {
         series: [{
                 name: 'Raw Dust Particles',
                 color: '#4572A7',
-                type: 'column',
+                type: 'spline',
                 yAxis: 1,
                 data: [],
                 tooltip: {
