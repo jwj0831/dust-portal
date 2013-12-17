@@ -29,13 +29,13 @@ function requestData() {
 }
 
 jQuery(document).ready(function() {
-	
+	/*
 	Highcharts.setOptions({
 		global: {
 			useUTC: false
 		}
 	});
-	
+	*/
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_area',
@@ -48,8 +48,8 @@ jQuery(document).ready(function() {
         },
         xAxis: {
             type: 'datetime',
-           // tickPixelInterval: 150,
-            //maxZoom: 20 * 1000
+           	tickPixelInterval: 150,
+            maxZoom: 20 * 1000
         },
         yAxis: [{ // Primary yAxis
             labels: {
