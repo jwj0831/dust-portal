@@ -19,24 +19,7 @@ include ("header.php");
 					title: 'Raw Dust Info',
 					seriesType: "line",
           			series: { 2: {type: "bars"}},
-          			vAxes: 
-          				{
-          					{},
-  							{
-								title:'Percent',
-				             	format:'#,###%',
-				            	titleTextStyle: {color: 'blue'},
-					        	textStyle: {color: 'blue'},
-				             	textPosition: 'out'
-				         	}, 
-                            {
-                            	title:'Millions',
-                             	format:'#,###',
-                             	titleTextStyle: {color: 'red'},  
-	                            textStyle: {color: 'red'},
-    	                        textPosition: 'out'
-    	                  	}
-						}
+          			vAxes: {0: {logScale: false}, 1: {logScale: false, maxValue: 10}}
 				};
 			
 				var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
