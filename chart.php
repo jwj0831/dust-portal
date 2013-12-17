@@ -34,6 +34,7 @@ jQuery(document).ready(function() {
 			useUTC: false
 		}
 	});
+	
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_area',
