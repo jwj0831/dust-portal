@@ -15,7 +15,8 @@ for($i=49; $i >= 0 ; $i--){
 	$data['rows'][] = array('c' => array( array('v' => $row['timestamp']), array('v' => $row['raw_data']),array('v' => $row['idi_data']) ) );
 }
 */
-$data = array($rows['timestamp'], $rows['idi_data']);
+$row = $rows[0];
+$data = array($row['timestamp'], $row['idi_data']);
 echo json_encode($data);
 
 $result->free();
