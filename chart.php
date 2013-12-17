@@ -19,7 +19,20 @@ include ("header.php");
 					title: 'Raw Dust Info',
 					seriesType: "line",
           			series: { 2: {type: "bars"}},
-          			vAxes: {0: {logScale: false}, 1: {logScale: false, maxValue: 10}}
+          			vAxis: {
+						     0: {
+						         viewWindow: {
+						             min: 0,
+						             max: 100000
+						         }
+						     },
+						     1: {
+						         viewWindow: {
+						             min: 0,
+						             max: 2
+						         }
+						     }
+						 }
 				};
 			
 				var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
