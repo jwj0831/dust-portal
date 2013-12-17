@@ -80,7 +80,6 @@ jQuery(document).ready(function() {
             },
 			min: 0,
 			max: 2,
-			tickInterval:1,
 			opposite: true
         }],
         tooltip: {
@@ -99,7 +98,6 @@ jQuery(document).ready(function() {
                 name: 'IDI',
                 color: '#C94D4D',
                 type: 'column',
-                tickInterval: 1,
                 data: []
     		}]
     });
