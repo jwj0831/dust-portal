@@ -18,9 +18,8 @@ include ("header.php");
 				var options = {
 					title: 'Raw Dust Info',
 					seriesType: "line",
-          			series: {2: {type: "bars"}
-          			
-          			vAxes:{{title:'Percent',
+          			series: {2: {type: "bars"},
+          			vAxes: { {title:'Percent',
                              format:'#,###%',
                              titleTextStyle: {color: 'blue'},
                              textStyle:{color: 'blue'},
