@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
         yAxis: [{ // Primary yAxis
             labels: {
                 formatter: function() {
-                    return this.value +'°C';
+                    return this.value +'pcs/283mL';
                 },
                 style: {
                     color: '#89A54E'
@@ -79,8 +79,9 @@ jQuery(document).ready(function() {
                 style: {
                     color: '#4572A7'
                 }
-            }
-
+            },
+			min: 0,
+			max: 2,
         }],
         series: [{
                 name: 'Raw Dust Particles',
@@ -93,7 +94,7 @@ jQuery(document).ready(function() {
                 }
     
             }, {
-                name: 'Temperature',
+                name: 'IDI',
                 color: '#89A54E',
                 type: 'spline',
                 data: []
