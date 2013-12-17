@@ -17,7 +17,12 @@ function requestData() {
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
 	        var series = chart.series[1];
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
-	
+			
+			var date = new Date(point[0]*1000);
+			console.log(date);
+			chart.dataProvider=data;
+			chart.validateData();	
+		
 	        // add the point
 	        chart.series[0].addPoint(point[1], true, shift);
 	        chart.series[1].addPoint(point[2], true, shift);
@@ -48,8 +53,8 @@ jQuery(document).ready(function() {
         },
         xAxis: {
             type: 'datetime',
-            tickPixelInterval: 150,
-            maxZoom: 20 * 1000
+           // tickPixelInterval: 150,
+            //maxZoom: 20 * 1000
         },
         yAxis: [{ // Primary yAxis
             labels: {

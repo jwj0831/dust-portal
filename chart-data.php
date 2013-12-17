@@ -15,11 +15,10 @@ for($i=49; $i >= 0 ; $i--){
 	$data['rows'][] = array('c' => array( array('v' => $row['timestamp']), array('v' => $row['raw_data']),array('v' => $row['idi_data']) ) );
 }
 */
-$x = $row[0]* 1000;
 $y = (float) $row[1];
 $z = (int) $row[2];
 
-$data = array($x, $y, $z);
+$data = array($row[0], $y, $z);
 echo json_encode($data);
 
 $result->free();
