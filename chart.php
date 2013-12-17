@@ -62,21 +62,6 @@ jQuery(document).ready(function() {
                     color: '#4572A7'
                 }
             },
-        }, { // Secondary yAxis
-            title: {
-                text: 'IDI',
-                style: {
-                    color: '#C94D4D'
-                }
-            },
-            labels: {
-                style: {
-                    color: '#C94D4D'
-                }
-            },
-			min: -1,
-			max: 3,
-			opposite: true
         }],
         tooltip: {
                 shared: true
@@ -90,12 +75,7 @@ jQuery(document).ready(function() {
                     valueSuffix: ' pcs/283mL'
                 }
     
-            }, {
-                name: 'IDI',
-                color: '#C94D4D',
-                type: 'spline',
-                data: []
-    		}]
+            }]
     });
 });			
 			
