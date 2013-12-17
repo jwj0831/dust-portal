@@ -4,7 +4,7 @@ header("Content-type: text/json");
 include("config.inc.php"); //include config file
 
 $result = $mysqli->query("SELECT timestamp, raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 1");
-$rows = $result->fetch_array(MYSQLI_ASSOC);
+$row = $result->fetch_row();
 /*
 $data['cols'][] = array('type' => 'string', 'label' => 'timestamp');
 $data['cols'][] = array('type' => 'number', 'label' => 'raw_data');
@@ -17,8 +17,9 @@ for($i=49; $i >= 0 ; $i--){
 */
 $x = time() * 1000;
 $y = rand(0,100);
-$row = $rows[0];
-$data = array($x, $y);
+$z = (int) $row[2];
+
+$data = array($x, $z);
 echo json_encode($data);
 
 $result->free();
