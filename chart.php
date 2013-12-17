@@ -84,19 +84,21 @@ jQuery(document).ready(function() {
 			max: 2,
         }],
         series: [{
+        		yAxis: 0,
                 name: 'Raw Dust Particles',
                 color: '#4572A7',
                 type: 'spline',
-                yAxis: 1,
                 data: [],
                 tooltip: {
                     valueSuffix: ' pcs/283mL'
                 }
     
             }, {
+            	yAxis: 1,
                 name: 'IDI',
                 color: '#c94d4d',
                 type: 'column',
+                tickInterval: 1,
                 data: []
     		}]
     });
