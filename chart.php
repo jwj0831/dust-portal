@@ -18,17 +18,17 @@ include ("header.php");
 				var options = {
 					title: 'Raw Dust Info',
 					seriesType: "line",
-          			series: {2: {type: "bars"},
-          			vAxes: { {title:'Percent',
-                             format:'#,###%',
-                             titleTextStyle: {color: 'blue'},
-                             textStyle:{color: 'blue'},
-                             textPosition: 'out'}, 
-                            {title:'Millions',
-                             format:'#,###',
-                             titleTextStyle: {color: 'red'},  
-                             textStyle:{color: 'red'},
-                             textPosition: 'out'}}
+          			series: { 2: {type: "bars"},
+          			vAxes: { 1: {title:'Percent',
+                             	format:'#,###%',
+                            	titleTextStyle: {color: 'blue'},
+                             	textStyle:{color: 'blue'},
+                             	textPosition: 'out'}, 
+                            2: {title:'Millions',
+                             	format:'#,###',
+                             	titleTextStyle: {color: 'red'},  
+	                            textStyle:{color: 'red'},
+    	                        textPosition: 'out'}}
 				};
 			
 				var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
