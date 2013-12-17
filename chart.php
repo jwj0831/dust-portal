@@ -1,59 +1,34 @@
 <?php
 include ("header.php");
 ?>
+			<div id="chart_area" style="width:100%; height:400px;"></div>
 			<script type="text/javascript">
-			google.load("visualization", "1", {packages:["corechart"]});
-			google.setOnLoadCallback(drawChart);
-			function drawChart() {
-				var jsonData = jQuery.ajax({
-					url: "chart_process.php",
-					dataType:"json",
-					async: false
-				}).responseText;
-			
-				//alert(jsonData);
-						
-				// Create our data table out of JSON data loaded from server.
-				var data = new google.visualization.DataTable(jsonData);
-				var options = {
-					title: 'Raw Dust Info',
-					seriesType: "line",
-          			series: { 2: {type: "bars"}},
-          			vAxis: {
-						     0: {
-						         viewWindow: {
-						             min: 0,
-						             max: 100000
-						         }
-						     },
-						     1: {
-						         viewWindow: {
-						             min: 0,
-						             max: 2
-						         }
-						     }
-						 }
-				};
-			
-				var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-				chart.draw(data, options);
-			
-				function resizeHandler () {
-			        chart.draw(data, options);
-			    }
-			    if (window.addEventListener) {
-			        window.addEventListener('resize', resizeHandler, false);
-			    }
-			    else if (window.attachEvent) {
-			        window.attachEvent('onresize', resizeHandler);
-			    }
-				
-			}
-			
-			
+			jQuery(function () { 
+    			jQuery('#chart_area').highcharts({
+			        chart: {
+			            type: 'bar'
+			        },
+			        title: {
+			            text: 'Fruit Consumption'
+			        },
+			        xAxis: {
+			            categories: ['Apples', 'Bananas', 'Oranges']
+			        },
+			        yAxis: {
+			            title: {
+			                text: 'Fruit eaten'
+			            }
+			        },
+			        series: [{
+			            name: 'Jane',
+			            data: [1, 0, 4]
+			        }, {
+			            name: 'John',
+			            data: [5, 7, 3]
+			        }]
+			    });
+			});
 			</script>
-			<div id="chart_div"></div>
-		
 			<div class="footer text-center">
 				Copyright at <strong>K2V</strong> in 2013 Fusion Project Class
 			</div>
