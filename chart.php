@@ -29,7 +29,7 @@ function requestData() {
 jQuery(document).ready(function() {
     chart = new Highcharts.Chart({
         chart: {
-            renderTo: 'container',
+            renderTo: 'chart_area',
             defaultSeriesType: 'spline',
             events: {
                 load: requestData
