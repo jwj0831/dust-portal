@@ -53,7 +53,7 @@ include ("header.php");
 					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
 					  	</div>
 					  	<div class="panel-body">
-							<div id="time-info" class="grid-block col-md-6 col-lg-6 text-center">
+							<div id="time-info" class="text-center">
 								<span id="clock-label" class="grid-label">Time</span></br>
 								<strong><span id="clock">Wait...</br>Server</span></strong>
 							</div>
@@ -68,8 +68,10 @@ include ("header.php");
 					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
 					  	</div>
 					  	<div class="panel-body">
-							<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
-							<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
+					  		<div id="time-info" class="text-center">
+								<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
+								<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -79,8 +81,10 @@ include ("header.php");
 					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
 					  	</div>
 					  	<div class="panel-body">
-							<span id="dust-label" class="grid-label">Current</br> Dust Value</span></br>
-							<strong><span id="dust-val"><?php echo $raw_data;?></span></strong>
+					  		<div id="time-info" class="text-center">
+								<span id="dust-label" class="grid-label">Current</br> Dust Value</span></br>
+								<strong><span id="dust-val"><?php echo $raw_data;?></span></strong>
+							</div>
 						</div>
 					</div>
 				</div>
