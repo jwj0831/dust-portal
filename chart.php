@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
             }
         },
         title: {
-            text: 'Live random data'
+            text: 'Real-time Indoor Dust Monitoring Chart'
         },
         xAxis: {
             type: 'datetime',
@@ -80,7 +80,12 @@ jQuery(document).ready(function() {
             },
 			min: 0,
 			max: 2,
+			tickInterval:1,
+			opposite: true
         }],
+        tooltip: {
+                shared: true
+        },
         series: [{
                 name: 'Raw Dust Particles',
                 color: '#4572A7',
