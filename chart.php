@@ -17,7 +17,7 @@ function requestData() {
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
 	        var series = chart.series[1];
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
-		
+			console.log(point);
 	        // add the point
 	        chart.series[0].addPoint(point[1], true, shift);
 	        chart.series[1].addPoint(point[2], true, shift);
