@@ -48,8 +48,6 @@ jQuery(document).ready(function() {
         },
         xAxis: {
             type: 'datetime',
-           	tickPixelInterval: 150,
-            maxZoom: 20 * 1000
         },
         yAxis: [{ // Primary yAxis
             labels: {
