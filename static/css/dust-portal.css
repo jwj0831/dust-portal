@@ -1,21 +1,17 @@
-.container {
-	max-width: 800px;
-}
-
-#navigation {
-	margin-top: 20px;
-}
+/*
+ * Global Area
+ */
 
 .navbar-nav{
 	float: right;
 }
-
 
 .row
 {
 	font-size: 50px;
 	color: #463737;
 }
+
 #chart_div{
 	width: 100%;
 	height: 100%;
@@ -33,7 +29,6 @@
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-	#top-row{padding-top: 10%;}
 	.footer{margin-top:10%;}
 	.grid-block{
 		width: 48%;
@@ -43,7 +38,6 @@
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	#top-row{padding-top: 20%;}
 	.footer{margin-top:25%;}
 	.grid-block{
 		width: 48%;

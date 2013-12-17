@@ -10,7 +10,7 @@
 		<link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="./static/favicon.ico" type="image/x-icon">
 
-		<title>Indoor Dust Monitor</title>
+		<title>Real-time Indoor Dust Monitor Page</title>
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
@@ -48,7 +48,7 @@
 					    <span class="icon-bar"></span>
 				  	    <span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" id="title-bar" href="http://117.16.146.81/dust-portal/">Indoor Dust Monitoring Page</a>
+					<a class="navbar-brand" id="title-bar" href="http://117.16.146.81/dust-portal/">Real-time Indoor Dust Monitoring Dash Board</a>
 				</div>
 				
 				  <!-- Collect the nav links, forms, and other content for toggling -->
