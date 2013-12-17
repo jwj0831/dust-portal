@@ -17,10 +17,9 @@ function requestData() {
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
 	        var series = chart.series[1];
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
-			alert(point);
 	        // add the point
-	        chart.series[0].addPoint(point[1], true, shift);
-	        chart.series[1].addPoint(point[2], true, shift);
+	        chart.series[0].addPoint([point[0], point[1]], true, shift);
+	        chart.series[1].addPoint([[point[0], point[2]], true, shift);
 	        // call it again after one second
 	        setTimeout(requestData, 30000);    
 	    },
@@ -46,7 +45,7 @@ jQuery(document).ready(function() {
             text: 'Real-time Indoor Dust Monitoring Chart'
         },
         xAxis: {
-            type: 'datetime',
+            type: 'datetime'
         },
         yAxis: [{ // Primary yAxis
             labels: {
@@ -94,7 +93,6 @@ jQuery(document).ready(function() {
             }, {
                 name: 'IDI',
                 color: '#C94D4D',
-                type: 'spline',
                 data: []
     		}]
     });
