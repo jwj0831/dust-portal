@@ -97,7 +97,7 @@ jQuery(document).ready(function() {
             }, {
                 name: 'IDI',
                 color: '#C94D4D',
-                type: 'column',
+                type: 'spline',
                 data: []
     		}]
     });
