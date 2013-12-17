@@ -8,11 +8,6 @@
 	color: #463737;
 }
 
-#chart_div{
-	width: 100%;
-	height: 100%;
-}
-
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 @media (max-width: 767px){
@@ -20,30 +15,16 @@
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	.footer{margin-top:20px;} 
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-	.footer{margin-top:10%;}
-	.grid-block{
-		width: 48%;
-		margin: 1% 1%;
-	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.footer{margin-top:25%;}
-	.grid-block{
-		width: 48%;
-		margin: 1% 1%;
-	}
 }
 
-.grid-block{
-
-}
 
 #symbol-info{
 	/* background-color: #d33431; *//*Severe background color*/
@@ -63,9 +44,6 @@
 	background-color: #fbca01;
 }
 
-.text-val{
-	margin-left: 0px;
-}
 .footer{
 	color: #777;
 }

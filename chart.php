@@ -46,7 +46,7 @@ jQuery(document).ready(function() {
         },
         xAxis: {
             type: 'datetime',
-            tickInterval: 60 * 1000
+            tickInterval: 30 * 1000
         },
         yAxis: [{ // Primary yAxis
             labels: {

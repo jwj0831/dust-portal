@@ -50,7 +50,7 @@
 					    <span class="icon-bar"></span>
 				  	    <span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" id="title-bar" href="http://117.16.146.81/dust-portal/">Real-time Indoor Dust Monitoring Dash Board</a>
+					<a class="navbar-brand" id="title-bar" href="http://117.16.146.81/dust-portal/">Real-time Indoor Dust Monitoring Dashboard</a>
 				</div>
 				
 				  <!-- Collect the nav links, forms, and other content for toggling -->
