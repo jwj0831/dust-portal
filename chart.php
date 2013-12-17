@@ -93,6 +93,7 @@ jQuery(document).ready(function() {
             }, {
                 name: 'IDI',
                 color: '#C94D4D',
+                type: 'spline',
                 data: []
     		}]
     });
