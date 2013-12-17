@@ -3,7 +3,7 @@ header("Content-type: text/json");
 
 include("config.inc.php"); //include config file
 
-$result = $mysqli->query("SELECT UNIX_TIMESTAMP( timestamp ) * 1000, raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 1");
+$result = $mysqli->query("SELECT timestamp, raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 1");
 $row = $result->fetch_row();
 /*
 $data['cols'][] = array('type' => 'string', 'label' => 'timestamp');
@@ -15,7 +15,7 @@ for($i=49; $i >= 0 ; $i--){
 	$data['rows'][] = array('c' => array( array('v' => $row['timestamp']), array('v' => $row['raw_data']),array('v' => $row['idi_data']) ) );
 }
 */
-$x = (int) $row[0];
+$x = strtotime($row[0]) * 1000;
 $y = (float) $row[1];
 $z = (int) $row[2];
 $data = array($x, $y, $z);
