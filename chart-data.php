@@ -16,9 +16,10 @@ for($i=49; $i >= 0 ; $i--){
 }
 */
 $x = $row[0]* 1000;
+$y = (float) $row[1];
 $z = (int) $row[2];
 
-$data = array($x, $z);
+$data = array($x, $y, $z);
 echo json_encode($data);
 
 $result->free();

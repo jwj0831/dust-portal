@@ -37,7 +37,6 @@ jQuery(document).ready(function() {
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_area',
-            defaultSeriesType: 'spline',
             events: {
                 load: requestData
             }
@@ -50,19 +49,54 @@ jQuery(document).ready(function() {
             tickPixelInterval: 150,
             maxZoom: 20 * 1000
         },
-        yAxis: {
-            minPadding: 0.2,
-            maxPadding: 0.2,
+        yAxis: [{ // Primary yAxis
+            labels: {
+                formatter: function() {
+                    return this.value +'°C';
+                },
+                style: {
+                    color: '#89A54E'
+                }
+            },
             title: {
-                text: 'Value',
-                margin: 80
+                text: 'Concentration (pcs/283mL)',
+                style: {
+                    color: '#89A54E'
+                }
+            },
+            opposite: true
+
+        }, { // Secondary yAxis
+            title: {
+                text: 'IDI',
+                style: {
+                    color: '#4572A7'
+                }
+            },
+            labels: {
+                style: {
+                    color: '#4572A7'
+                }
             }
-        },
+
+        }],
         series: [{
-            name: 'Random data',
-            data: []
-        }]
-    });        
+                name: 'Raw Dust Particles',
+                color: '#4572A7',
+                type: 'column',
+                yAxis: 1,
+                data: [],
+                tooltip: {
+                    valueSuffix: ' pcs/283mL'
+                }
+    
+            }, {
+                name: 'Temperature',
+                color: '#89A54E',
+                type: 'spline',
+                data: []
+    	}
+    });
 });			
 			
 			</script>
