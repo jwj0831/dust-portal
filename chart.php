@@ -22,7 +22,7 @@ function requestData() {
 	        chart.series[0].addPoint(point[1], true, shift);
 	        chart.series[1].addPoint(point[2], true, shift);
 	        // call it again after one second
-	        setTimeout(requestData, 1000);    
+	        setTimeout(requestData, 30000);    
 	    },
 	    cache: false
 	});
