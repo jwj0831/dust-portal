@@ -19,7 +19,7 @@ function requestData() {
 	        var shift = series.data.length > 20; // shift if the series is longer than 20
 	        // add the point
 	        chart.series[0].addPoint([point[0], point[1]], true, shift);
-	        chart.series[1].addPoint([[point[0], point[2]], true, shift);
+	        chart.series[1].addPoint([point[0], point[2]], true, shift);
 	        // call it again after one second
 	        setTimeout(requestData, 30000);    
 	    },
