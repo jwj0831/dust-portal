@@ -4,20 +4,9 @@ include ("config.inc.php");
 $result = $mysqli->query("SELECT raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 0, 1");
 $obj = $result->fetch_object();
 
-$raw = $obj->raw_data;
+$raw_data = $obj->raw_data;
 $idi = $obj->idi_data;
-$idi_string = "";
-switch($idi){
-	case 0:
-		$idi_string = "Good";
-		break;
-	case 1:
-		$idi_string = "Not Bad";
-		break;
-	case 2:
-		$idi_string = "Severe";
-		break;
-}
+
 $result->free();
 
 $result = $mysqli->query("SELECT max_val FROM max_data ORDER BY id DESC LIMIT 0, 1");
@@ -35,12 +24,25 @@ include ("header.php");
 				<div class="col-md-6 col-xs-12">
 					<div class="panel panel-default">
 					  	<div class="panel-heading">
-					    	<h3 class="panel-title">Current Indor Dust Index</h3>
+					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
 					  	</div>
 					  	<div class="panel-body">
-				    		<div id="symbol-info" class="grid-block col-md-6 col-lg-6 text-center">
-								<span id="symbol-label" class="grid-label">Indoor</br> Dust Index</span></br>
-								<strong><span id="symbol-val"><?php echo $idi_string; ?></span></strong>
+				    		<div id="symbol-info" class="grid-block text-center">
+<?php
+	switch($idi){
+		case 0:
+			echo '<strong><span id="symbol-val">Good</span></strong> <i class="fa fa-smile-o"></i>';
+			break;
+			
+		case 1:
+			echo '<strong><span id="symbol-val">Not Bad</span></strong> <i class="fa fa-meh-o"></i>';
+			break;
+			
+		case 2:
+			echo '<strong><span id="symbol-val">Severe</span></strong> <i class="fa fa-frown-o"></i>';
+			break;
+	}
+?>
 							</div>
 					  	</div>
 					</div>
@@ -61,7 +63,7 @@ include ("header.php");
 				</div>
 				<div id="dust-info" class="grid-block col-md-6 col-lg-6 text-center">
 						<span id="dust-label" class="grid-label">Current</br> Dust Value</span></br>
-						<strong><span id="dust-val"><?php echo $raw;?></span></strong>
+						<strong><span id="dust-val"><?php echo $raw_data;?></span></strong>
 				</div>
 			</div>
 			
