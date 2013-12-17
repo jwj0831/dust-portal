@@ -3,7 +3,7 @@ header("Content-type: text/json");
 
 include("config.inc.php"); //include config file
 
-$result = $mysqli->query("SELECT timestamp, raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 1");
+$result = $mysqli->query("SELECT UNIX_TIMESTAMP( timestamp ), raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 1");
 $row = $result->fetch_row();
 /*
 $data['cols'][] = array('type' => 'string', 'label' => 'timestamp');
