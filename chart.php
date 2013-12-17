@@ -18,7 +18,7 @@ include ("header.php");
 				var options = {
 					title: 'Raw Dust Info',
 					seriesType: "line",
-          			series: {5: {type: "bars"}}
+          			series: {5: {type: "bars", targetAxisIndex:1}}
 				};
 			
 				var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
