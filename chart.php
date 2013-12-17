@@ -45,7 +45,8 @@ jQuery(document).ready(function() {
             text: 'Real-time Indoor Dust Monitoring Chart'
         },
         xAxis: {
-            type: 'datetime'
+            type: 'datetime',
+            tickInterval: 60 * 1000
         },
         yAxis: [{ // Primary yAxis
             labels: {
