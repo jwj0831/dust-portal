@@ -95,8 +95,8 @@ jQuery(document).ready(function() {
     
             }, {
                 name: 'IDI',
-                color: '#89A54E',
-                type: 'spline',
+                color: '#c94d4d',
+                type: 'column',
                 data: []
     		}]
     });
