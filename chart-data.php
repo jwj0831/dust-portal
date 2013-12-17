@@ -19,7 +19,7 @@ for($i=49; $i >= 0 ; $i--){
 $y = rand(0,100);
 $z = (int) $row[2];
 
-$data = array($y, $z);
+$data = array($row[0], $z);
 echo json_encode($data);
 
 $result->free();
