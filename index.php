@@ -124,7 +124,7 @@ include ("header.php");
 														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#5bc0de),to(#31b0d5))",
 														"background-image" : "-webkit-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
 														"background-image" : "-moz-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
-														"background-image" : "linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%)"
+														"background-image" : "linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%)",
 														"background-repeat" : "repeat-x"
 														});
 						  	break;
@@ -133,7 +133,7 @@ include ("header.php");
 														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#f0ad4e),to(#ec971f))",
 														"background-image" : "-webkit-linear-gradient(top,#f0ad4e 0,#ec971f 100%)",
 														"background-image" : "-moz-linear-gradient(top,#f0ad4e 0,#ec971f 100%)",
-														"background-image" : "linear-gradient(to bottom,#f0ad4e 0,#ec971f 100%)"
+														"background-image" : "linear-gradient(to bottom,#f0ad4e 0,#ec971f 100%)",
 														"background-repeat" : "repeat-x"
 														});
 						  	break;
@@ -142,7 +142,7 @@ include ("header.php");
 														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#d9534f),to(#c9302c))",
 														"background-image" : "-webkit-linear-gradient(top,#d9534f 0,#c9302c 100%)",
 														"background-image" : "-moz-linear-gradient(top,#d9534f 0,#c9302c 100%)",
-														"background-image" : "linear-gradient(to bottom,#d9534f 0,#c9302c 100%)"
+														"background-image" : "linear-gradient(to bottom,#d9534f 0,#c9302c 100%)",
 														"background-repeat" : "repeat-x"
 														});
 						  	break;
@@ -151,7 +151,7 @@ include ("header.php");
 														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#5bc0de),to(#31b0d5))",
 														"background-image" : "-webkit-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
 														"background-image" : "-moz-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
-														"background-image" : "linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%)"
+														"background-image" : "linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%)",
 														"background-repeat" : "repeat-x"
 														});
 					}
