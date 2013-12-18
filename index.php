@@ -50,10 +50,10 @@ include ("header.php");
 				<div class="col-md-9 col-xs-12">
 					<div class="panel panel-default">
 					  	<div class="panel-heading">
-					    	<h3 class="panel-title">Tdoay IDI Ratio</h3>
+					    	<h3 class="panel-title">Today's IDI Ratio</h3>
 					  	</div>
 					  	<div class="panel-body">
-							<div id="time-info" class="">
+							<div id="ratio-info" class="">
 								<!--
 								<span id="clock-label" class="grid-label">Time</span></br>
 								<strong><span id="clock">Wait...</br>Server</span></strong>
@@ -85,28 +85,15 @@ include ("header.php");
 				</div>
 			</div><!-- #first-row -->
 			<div class="row">
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-12 col-xs-12">
 					<div class="panel panel-default">
 					  	<div class="panel-heading">
-					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
+					    	<h3 class="panel-title">Current Indoor Dust Figures</h3>
 					  	</div>
 					  	<div class="panel-body">
-					  		<div id="time-info" class="text-center">
+					  		<div id="dust-info" class="text-center">
 								<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
 								<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-xs-12">
-					<div class="panel panel-default">
-					  	<div class="panel-heading">
-					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
-					  	</div>
-					  	<div class="panel-body">
-					  		<div id="time-info" class="text-center">
-								<span id="dust-label" class="grid-label">Current</br> Dust Value</span></br>
-								<strong><span id="dust-val"><?php echo $raw_data;?></span></strong>
 							</div>
 						</div>
 					</div>
