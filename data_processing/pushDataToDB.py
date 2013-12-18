@@ -128,15 +128,15 @@ while 1 :
 				mrc_frq += 1
 		
 		if hrc_frq > conf_dic['rfhrc']:
-			idi = 2;		# Decided to "Severe"
+			idi = 2		# Decided to "Severe"
 			today_idi_num_dic['severe'] = today_idi_num_dic['severe'] + 1
 			msg = "Current Indoor Dust Envionment is Severe!!!"
 			send_email(msg, mail_password)
 		elif mrc_frq > conf_dic['rfmrc']:
-			idi = 1;		# Decided to "Not Bad"
+			idi = 1		# Decided to "Not Bad"
 			today_idi_num_dic['notbad'] = today_idi_num_dic['notbad'] + 1
 		else:
-			idi = 0;		# Decided to "Good"
+			idi = 0		# Decided to "Good"
 			today_idi_num_dic['good'] = today_idi_num_dic['good'] + 1
 			
 		stat_dic['good_ratio'] = str( float( round( (today_idi_num_dic['good'] / today_idi_num_dic['total']) * 100)  ) )
