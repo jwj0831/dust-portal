@@ -63,7 +63,7 @@ def getStatDic(curs):
 		temp_dic['severe_ratio'] = int(results[6])
 		return max_data
 	else :
-		curs.execute( """INSERT INTO VALUES(default, now(), default, default, default, default, default)"""  )
+		curs.execute( """INSERT INTO stat_data VALUES(default, now(), default, default, default, default, default)"""  )
 		db.commit()
 		
 		return temp_dic
@@ -165,7 +165,7 @@ while 1 :
 		stat_dic['notbad_ratio'] = 0
 		stat_dic['severe_ratio'] = 0
 		currentDay = newDay
-		curs.execute( """INSERT INTO VALUES(default, now(), default, default, default, default, default)"""  )
+		curs.execute( """INSERT INTO stat_data VALUES(default, now(), default, default, default, default, default)"""  )
 		
 	if currentDay == newDay:
 		if convVal > stat_dic['max_val']:
