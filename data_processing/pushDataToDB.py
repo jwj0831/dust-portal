@@ -52,7 +52,7 @@ def getStatDic(curs):
 	temp_dic['good_ratio'] = 0
 	temp_dic['notbad_ratio'] = 0
 	temp_dic['severe_ratio'] = 0
-	resultRow = curs.execute( 'SELECT * FROM stat_data WHERE day = now()' )
+	resultRow = curs.execute( 'SELECT * FROM stat_data WHERE day = now()  ORDER BY id DESC LIMIT 1' )
 	if resultRow == 1:
 		results = curs.fetchone()
 		temp_dic['stat_id'] = int(results[0])
@@ -159,6 +159,7 @@ while 1 :
 	newDay = newDayFormat.day
 	
 	if currentDay != newDay:
+		stat_dic['stat_id'] = stat_dic['stat_id'] + 1
 		stat_dic['max_val'] = 0
 		stat_dic['min_val'] = 0
 		stat_dic['good_ratio'] = 0

@@ -158,9 +158,9 @@ include ("header.php");
 														});
 					}
 					
-					jQuery("#good-ratio-label").text(<?php echo $good_ratio."%" ;?>);
-					jQuery("#notbad-ratio-label").text(<?php echo $notbad_ratio."%" ;?>);
-					jQuery("#severe-ratio-label").text(<?php echo $severe_ratio."%" ;?>);
+					jQuery("#good-ratio-label").text("<?php echo $good_ratio."%" ;?>");
+					jQuery("#notbad-ratio-label").text("<?php echo $notbad_ratio."%" ;?>");
+					jQuery("#severe-ratio-label").text("<?php echo $severe_ratio."%" ;?>");
 				});
 		</script>
 	</body>
