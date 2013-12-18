@@ -21,17 +21,17 @@ $mysqli->close();
 include ("header.php");
 ?>
 			<div id="first-row" class="row">
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-3 col-xs-12">
 					<div class="panel panel-default">
 					  	<div class="panel-heading">
 					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
 					  	</div>
 					  	<div class="panel-body">
-				    		<div id="symbol-info" class="grid-block text-center">
+				    		<div id="symbol-info" class="text-center">
 <?php
 	switch($idi){
 		case 0:
-			echo '<strong><span id="symbol-val">Good</span></strong> <i class="fa fa-smile-o"></i>';
+			echo '<i class="fa fa-smile-o"></i><span id="symbol-val">Good</span>';
 			break;
 			
 		case 1:
@@ -47,20 +47,43 @@ include ("header.php");
 					  	</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-9 col-xs-12">
 					<div class="panel panel-default">
 					  	<div class="panel-heading">
-					    	<h3 class="panel-title">Current Indoor Dust Index</h3>
+					    	<h3 class="panel-title">Tdoay IDI Ratio</h3>
 					  	</div>
 					  	<div class="panel-body">
 							<div id="time-info" class="text-center">
+								<!--
 								<span id="clock-label" class="grid-label">Time</span></br>
 								<strong><span id="clock">Wait...</br>Server</span></strong>
+								-->
+								<strong>Good</strong>
+						  		<label id="good-ratio-label" class="pull-right"></label>
+							  	<div class="progress">
+							  		<div id="good-progress-bar" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+							    		<span id="good-ratio-span" class="sr-only"></span>
+							  		</div>
+								</div>
+							  	<strong>Not bad</strong>
+							  	<label id="not-bad-ratio-label" class="pull-right"></label>
+								<div class="progress">
+							  		<div id="not-bad-progress-bar" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+							    		<span id="not-bad-ratio-span" class="sr-only"></span>
+							  		</div>
+								</div>
+							  	<strong>Severe</strong>
+							  	<label id="severe-ratio-span" class="pull-right"></label>
+								<div class="progress">
+							  		<div id="severe-progress-bar" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+							    		<span id="severe-ratio-span" class="sr-only"></span>
+							  		</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div><!-- #first-row -->
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<div class="panel panel-default">

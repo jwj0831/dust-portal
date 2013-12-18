@@ -8,6 +8,11 @@
 	color: #463737;
 }
 
+.fa {
+	font-size: 120px;
+	margin-top: 10px;
+}
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 @media (max-width: 767px){
@@ -30,6 +35,7 @@
 	/* background-color: #d33431; *//*Severe background color*/
 	/* background-color: #e8703e; */ /*Not Bad background color*/
 	background-color: #f5bb63; /*Good background color*/
+	font-weight: bold;
 }
 
 #time-info{
@@ -37,9 +43,11 @@
 	/* da005e d33431 563e7c e8703e */
 	/* f99929 9d6119 ede61c 41b4d3 359dba 98ca45 */
 }
+
 #max-info{
 	background-color: #7fbf33;
 }
+
 #dust-info{
 	background-color: #fbca01;
 }
