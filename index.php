@@ -31,15 +31,15 @@ include ("header.php");
 <?php
 	switch($idi){
 		case 0:
-			echo '<i class="fa fa-smile-o"></i><span id="symbol-val">Good</span>';
+			echo '<i class="fa fa-smile-o"></i><span class="idi-string" id="symbol-val">Good</span>';
 			break;
 			
 		case 1:
-			echo '<strong><span id="symbol-val">Not Bad</span></strong> <i class="fa fa-meh-o"></i>';
+			echo '<i class="fa fa-meh-o"></i><span class="idi-string" id="symbol-val">Not Bad</span>';
 			break;
 			
 		case 2:
-			echo '<strong><span id="symbol-val">Severe</span></strong> <i class="fa fa-frown-o"></i>';
+			echo '<i class="fa fa-frown-o"></i><span class="idi-string" id="symbol-val">Severe</span>';
 			break;
 	}
 ?>
@@ -53,7 +53,7 @@ include ("header.php");
 					    	<h3 class="panel-title">Tdoay IDI Ratio</h3>
 					  	</div>
 					  	<div class="panel-body">
-							<div id="time-info" class="text-center">
+							<div id="time-info" class="">
 								<!--
 								<span id="clock-label" class="grid-label">Time</span></br>
 								<strong><span id="clock">Wait...</br>Server</span></strong>
@@ -120,16 +120,40 @@ include ("header.php");
 					var idi = parseInt(<?= $idi; ?>);// idi_number;
 					switch (idi) {
 						case 0:
-							jQuery("#symbol-info").css( {"background-color": "#f5bb63" });
+							jQuery("#symbol-info").css( {
+														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#5bc0de),to(#31b0d5))",
+														"background-image" : "-webkit-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
+														"background-image" : "-moz-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
+														"background-image" : "linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%)"
+														"background-repeat" : "repeat-x"
+														});
 						  	break;
 						case 1:
-						 	jQuery("#symbol-info").css( {"background-color": "#e8703e" });
+						 	jQuery("#symbol-info").css( {
+														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#f0ad4e),to(#ec971f))",
+														"background-image" : "-webkit-linear-gradient(top,#f0ad4e 0,#ec971f 100%)",
+														"background-image" : "-moz-linear-gradient(top,#f0ad4e 0,#ec971f 100%)",
+														"background-image" : "linear-gradient(to bottom,#f0ad4e 0,#ec971f 100%)"
+														"background-repeat" : "repeat-x"
+														});
 						  	break;
 						case 2:
-						 	jQuery("#symbol-info").css( {"background-color": "#d33431" });
+						 	jQuery("#symbol-info").css( {
+														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#d9534f),to(#c9302c))",
+														"background-image" : "-webkit-linear-gradient(top,#d9534f 0,#c9302c 100%)",
+														"background-image" : "-moz-linear-gradient(top,#d9534f 0,#c9302c 100%)",
+														"background-image" : "linear-gradient(to bottom,#d9534f 0,#c9302c 100%)"
+														"background-repeat" : "repeat-x"
+														});
 						  	break;
 						default:
-						  $("#symbol-info").css( {"background-color": "#f5bb63" });
+						  $("#symbol-info").css( {
+														"background-image" : "-webkit-gradient(linear,left 0,left 100%,from(#5bc0de),to(#31b0d5))",
+														"background-image" : "-webkit-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
+														"background-image" : "-moz-linear-gradient(top,#5bc0de 0,#31b0d5 100%)",
+														"background-image" : "linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%)"
+														"background-repeat" : "repeat-x"
+														});
 					}
 				});
 		</script>

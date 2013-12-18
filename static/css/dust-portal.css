@@ -4,13 +4,16 @@
 
 .row
 {
-	font-size: 50px;
 	color: #463737;
 }
 
 .fa {
 	font-size: 120px;
 	margin-top: 10px;
+}
+
+.idi-string {
+	font-size: 50px;
 }
 
 /* Extra small devices (phones, less than 768px) */
@@ -39,17 +42,14 @@
 }
 
 #time-info{
-	background-color: #05c6d8;
-	/* da005e d33431 563e7c e8703e */
-	/* f99929 9d6119 ede61c 41b4d3 359dba 98ca45 */
+
 }
 
 #max-info{
-	background-color: #7fbf33;
 }
 
 #dust-info{
-	background-color: #fbca01;
+
 }
 
 .footer{
