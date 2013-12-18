@@ -161,7 +161,7 @@ include ("header.php");
 					jQuery("#notbad-ratio-label").text("<?php echo $notbad_ratio."%" ;?>");
 					jQuery("#severe-ratio-label").text("<?php echo $severe_ratio."%" ;?>");
 					jQuery("#good-progress-bar").css({"width": "<?php echo $good_ratio."%";?>"});
-					jQuery("#notabd-progress-bar").css({"width": "<?php echo $notbad_ratio."%";?>"});
+					jQuery("#notbad-progress-bar").css({"width": "<?php echo $notbad_ratio."%";?>"});
 					jQuery("#severe-progress-bar").css({"width": "<?php echo $severe_ratio."%";?>"});
 				});
 		</script>
