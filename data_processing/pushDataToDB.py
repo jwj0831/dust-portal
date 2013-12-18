@@ -129,21 +129,24 @@ while 1 :
 		
 		if hrc_frq > conf_dic['rfhrc']:
 			idi = 2		# Decided to "Severe"
-			today_idi_num_dic['severe'] = today_idi_num_dic['severe'] + 1
+			tempVal = today_idi_num_dic['severe'] + 1
+			today_idi_num_dic['severe']  = tempVal
 			msg = "Current Indoor Dust Envionment is Severe!!!"
 			send_email(msg, mail_password)
 		elif mrc_frq > conf_dic['rfmrc']:
 			idi = 1		# Decided to "Not Bad"
-			today_idi_num_dic['notbad'] = today_idi_num_dic['notbad'] + 1
+			tempVal = today_idi_num_dic['notbad'] + 1
+			today_idi_num_dic['notbad'] = tempVal
 		else:
 			idi = 0		# Decided to "Good"
-			today_idi_num_dic['good'] = today_idi_num_dic['good'] + 1
+			tempVal = today_idi_num_dic['good'] + 1
+			today_idi_num_dic['good'] = tempVal
 			
 		today_idi_num_dic['total'] = today_idi_num_dic['total'] + 1	
 		
-		stat_dic['good_ratio'] = str( int(  (today_idi_num_dic['good'] / today_idi_num_dic['total']) * 100)   )
-		stat_dic['notbad_ratio'] = str( int(  (today_idi_num_dic['notbad'] / today_idi_num_dic['total']) * 100)  )
-		stat_dic['severe_ratio'] = str( int( (today_idi_num_dic['severe'] / today_idi_num_dic['total']) * 100) )
+		stat_dic['good_ratio'] = str( int(  ( today_idi_num_dic['good'] / today_idi_num_dic['total']) * 100)   )
+		stat_dic['notbad_ratio'] = str( int(  ( today_idi_num_dic['notbad'] / today_idi_num_dic['total'] ) * 100)  )
+		stat_dic['severe_ratio'] = str( int( ( today_idi_num_dic['severe'] / today_idi_num_dic['total'] ) * 100) )
 		
 		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s, severe_ratio = %s""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ))
 		
