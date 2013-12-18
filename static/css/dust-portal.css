@@ -39,7 +39,9 @@
 	/* background-color: #e8703e; */ /*Not Bad background color*/
 	font-weight: bold;
 }
-
+.data-box {
+	font-size: 50px;
+}
 #dust-info{
 
 }

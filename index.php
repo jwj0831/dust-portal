@@ -96,15 +96,15 @@ include ("header.php");
 					  	</div>
 					  	<div class="panel-body">
 					  		<div id="dust-info" class="text-center">
-					  			<div id="current-val" class="col-md-4 col-xs-12">
+					  			<div id="current-val" class="data-box col-md-4 col-xs-12">
 					  				<span id="max-label" class="grid-label">Today's</br> Current Value</span></br>
 									<strong><span id="max-val"><?php echo $raw_data; ?></span></strong>
 					  			</div>
-					  			<div id="max-val" class="col-md-4 col-xs-12">
+					  			<div id="max-val" class="data-box col-md-4 col-xs-12">
 					  				<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
 									<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
 					  			</div>
-					  			<div id="min-val" class="col-md-4 col-xs-12">
+					  			<div id="min-val" class="data-box col-md-4 col-xs-12">
 					  				<span id="max-label" class="grid-label">Today's</br> Min Value</span></br>
 									<strong><span id="max-val"><?php echo $min_data; ?></span></strong>
 					  			</div>
