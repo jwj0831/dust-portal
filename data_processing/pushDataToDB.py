@@ -108,8 +108,7 @@ mail_password = getMailUserPassword(curs)
 while 1 :
 	# Read the data from Serial Cable...
 	dustVal = ser.readline()
-	convVal = float(dustVal)
-	today_idi_num_dic['total'] = today_idi_num_dic['total'] + 1
+	convVal = cdfloat(dustVal)
 	
 	# Insert Sensor Data to DB with indoor dust index(idi)
 	if start_cond_check_flag == True:
@@ -139,6 +138,8 @@ while 1 :
 			idi = 0		# Decided to "Good"
 			today_idi_num_dic['good'] = today_idi_num_dic['good'] + 1
 			
+		today_idi_num_dic['total'] = today_idi_num_dic['total'] + 1	
+		
 		stat_dic['good_ratio'] = str( float( round( (today_idi_num_dic['good'] / today_idi_num_dic['total']) * 100)  ) )
 		stat_dic['notbad_ratio'] = str( float( round( (today_idi_num_dic['notbad'] / today_idi_num_dic['total']) * 100) ) )
 		stat_dic['severe_ratio'] = str( float( round( (today_idi_num_dic['severe'] / today_idi_num_dic['total']) * 100) ) )
