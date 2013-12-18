@@ -59,8 +59,8 @@ def getStatDic(curs):
 		temp_dic['max_val'] = round(float(results[2]),2)
 		temp_dic['min_val'] = round(float(results[3]),2)
 		temp_dic['good_ratio'] = int(results[4])
-		temp_dic['notbad_ratio'] = int(results[5]))
-		temp_dic['severe_ratio'] = int(results[6]))
+		temp_dic['notbad_ratio'] = int(results[5])
+		temp_dic['severe_ratio'] = int(results[6])
 		return max_data
 	else :
 		curs.execute( "INSERT INTO stat_data VALUES(default, now(), default, default, default, default, default)"  )
