@@ -92,8 +92,17 @@ include ("header.php");
 					  	</div>
 					  	<div class="panel-body">
 					  		<div id="dust-info" class="text-center">
-								<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
-								<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
+					  			<div id="current-val">
+					  				
+					  			</div>
+					  			<div id="max-val">
+					  				<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
+									<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
+					  			</div>
+					  			<div id="min-val">
+					  				
+					  			</div>
+								
 							</div>
 						</div>
 					</div>
