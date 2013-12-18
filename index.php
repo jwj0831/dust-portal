@@ -102,11 +102,11 @@ include ("header.php");
 					  			</div>
 					  			<div id="max-val">
 					  				<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
-									<strong><span id="max-val"><?php echo $max_val; ?></span></strong>
+									<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
 					  			</div>
 					  			<div id="min-val">
 					  				<span id="max-label" class="grid-label">Today's</br> Min Value</span></br>
-									<strong><span id="max-val"><?php echo $min_val; ?></span></strong>
+									<strong><span id="max-val"><?php echo $min_data; ?></span></strong>
 					  			</div>
 								
 							</div>
