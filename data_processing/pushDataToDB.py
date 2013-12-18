@@ -44,15 +44,34 @@ def checkBeforeData(curs):
 	else:
 		return False
 	
-def getMaxData(curs):
-	isItMaxVal = curs.execute( 'SELECT * FROM max_data WHERE day = now()' )
-	if isItMaxVal == 1:
+def getStatDic(curs):
+	temp_dic = {}
+	temp_dic['stat_id'] = 0
+	temp_dic['max_val'] = "0"
+	temp_dic['min_val'] = "0"
+	temp_dic['good_ratio'] = "0"
+	temp_dic['notbad_ratio'] = "0"
+	temp_dic['severe_ratio'] = "0"
+	resultRow = curs.execute( 'SELECT * FROM stat_data WHERE day = now()' )
+	if resultRow == 1:
 		results = curs.fetchone()
-		max_id = results[0];
-		max_data = round(float(results[1]),2)
+		temp_dic['stat_id'] = int(results[0])
+		temp_dic['max_val'] = round(float(results[2]),2)
+		temp_dic['min_val'] = round(float(results[3]),2)
+		temp_dic['good_ratio'] = int(results[4])
+		temp_dic['notbad_ratio'] = int(results[5])
+		temp_dic['severe_ratio'] = int(results[6])
 		return max_data
 	else :
-		return 0
+		curs.execute( """INSERT INTO max_val, min_val, good_ratio, notbad_ratio, severe_ratio VALUES(default, now(), %s, %s, %s, %s, %s)""", ( stat_dic['max_val'], stat_dic['min_val'], stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ) )
+		db.commit()
+		temp_dic['max_val'] = 0
+		temp_dic['min_val'] = 0
+		temp_dic['good_ratio'] = 0
+		temp_dic['notbad_ratio'] = 0
+		temp_dic['severe_ratio'] = 0
+		
+		return temp_dic
 	
 def getConfigurationDic(curs):
 	curs.execute("""SELECT * FROM dust_conf""");
@@ -77,20 +96,25 @@ db = MySQLdb.connect("localhost", "root", "1234", "dust")
 curs = db.cursor()
 ser = serial.Serial('/dev/ttyACM0', 9600)
 start_cond_check_flag = checkBeforeData(curs)
-max_data = getMaxData(curs)
+stat_dic =  getStatDic(curs)
 dayFormat = datetime.date.today()
 currentDay = dayFormat.day
+today_idi_num_dic = {}
+today_idi_num_dic['total'] = 0
+today_idi_num_dic['good'] = 0
+today_idi_num_dic['notbad'] = 0
+today_idi_num_dic['severe'] = 0
 conf_dic = getConfigurationDic(curs)
 mail_password = getMailUserPassword(curs)
 """
 ----------------------------------------
 """
 
-
 while 1 :
 	# Read the data from Serial Cable...
 	dustVal = ser.readline()
 	convVal = round(float(dustVal), 3)
+	today_idi_num_dic['total'] = today_idi_num_dic['total'] + 1
 	
 	# Insert Sensor Data to DB with indoor dust index(idi)
 	if start_cond_check_flag == True:
@@ -110,12 +134,21 @@ while 1 :
 		
 		if hrc_frq > conf_dic['rfhrc']:
 			idi = 2;		# Decided to "Severe"
+			today_idi_num_dic['severe'] = today_idi_num_dic['severe'] + 1
 			msg = "Current Indoor Dust Envionment is Severe!!!"
 			send_email(msg, mail_password)
 		elif mrc_frq > conf_dic['rfmrc']:
 			idi = 1;		# Decided to "Not Bad"
+			today_idi_num_dic['notbad'] = today_idi_num_dic['notbad'] + 1
 		else:
 			idi = 0;		# Decided to "Good"
+			today_idi_num_dic['good'] = today_idi_num_dic['good'] + 1
+			
+		stat_dic['good_ratio'] = str( round(today_idi_num_dic['good'] / today_idi_num_dic['total']) )
+		stat_dic['notbad_ratio'] = str( round(today_idi_num_dic['notbad'] / today_idi_num_dic['total']) )
+		stat_dic['severe_ratio'] = str( round(today_idi_num_dic['severe'] / today_idi_num_dic['total']) )
+		
+		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s severe_ratio = %s WHERE id = %s)""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] , stat_dic['stat_id'] ))
 		
 		#Put data to DB
 		curs.execute( """INSERT INTO dust_data VALUES(default, default, %s, %s)""", (convVal, idi))
@@ -126,17 +159,29 @@ while 1 :
 		db.commit()
 		start_cond_check_flag = checkBeforeData(curs)
 		
-	#Max Value Check
+	#MAX / Min Value Check
 	newDayFormat = datetime.date.today()
 	newDay = newDayFormat.day
 	
 	if currentDay != newDay:
-		max_data = 0
+		stat_dic['max_val'] = "0"
+		stat_dic['min_val'] = "0"
+		stat_dic['good_ratio'] = "0"
+		stat_dic['notbad_ratio'] = "0"
+		stat_dic['severe_ratio'] = "0"
 		currentDay = newDay
+		curs.execute( """INSERT INTO max_val, min_val, good_ratio, notbad_ratio, severe_ratio VALUES(default, now(), %s, %s, %s, %s, %s)""", ( stat_dic['max_val'], stat_dic['min_val'], stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ) )
 	
 	if currentDay == newDay:
-		if convVal > max_data:
-			max_data = convVal
-			convVal = str(convVal)
-			curs.execute( """INSERT INTO max_data VALUES(default, now(), %s)""", (convVal) )
-			db.commit()
+		if convVal > stat_dic['max_val']:
+			stat_dic['max_val'] = convVal
+			convMaxVal = str(convVal)
+			curs.execute( """UPDATE stat_data SET max_val = %s WHERE id = %s)""", (convMaxVal, stat_dic['stat_id'] ))
+		elif stat_dic['min_val'] == 0 or convVal < stat_dic['min_val']:
+			stat_dic['min_val'] = convVal
+			convMinVal = str(convVal)
+			curs.execute( """UPDATE stat_data SET min_val = %s WHERE id = %s)""", (convMinVal, stat_dic['stat_id'] ))
+			
+		db.commit()
+			
+		
