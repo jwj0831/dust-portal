@@ -46,7 +46,7 @@ def checkBeforeData(curs):
 	
 def getStatDic(curs):
 	temp_dic = {}
-	temp_dic['stat_id'] = 0
+	temp_dic['stat_id'] = 1
 	temp_dic['max_val'] = 0
 	temp_dic['min_val'] = 0
 	temp_dic['good_ratio'] = 0
