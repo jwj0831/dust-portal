@@ -14,9 +14,8 @@ $obj = $result->fetch_object();
 $max_data = $obj->max_val;
 $min_data = $obj->min_val;
 $good_ratio = $obj->good_ratio;
-$notbad_ratio = $obj->good_ratio;
-$severe_ratio = $obj->good_ratio;
-
+$notbad_ratio = $obj->notbad_ratio;
+$severe_ratio = $obj->severe_ratio;
 
 $result->free();
 $mysqli->close();
@@ -98,14 +97,16 @@ include ("header.php");
 					  	<div class="panel-body">
 					  		<div id="dust-info" class="text-center">
 					  			<div id="current-val">
-					  				
+					  				<span id="max-label" class="grid-label">Today's</br> Current Value</span></br>
+									<strong><span id="max-val"><?php echo $raw_data; ?></span></strong>
 					  			</div>
 					  			<div id="max-val">
 					  				<span id="max-label" class="grid-label">Today's</br> Max Value</span></br>
 									<strong><span id="max-val"><?php echo $max_data; ?></span></strong>
 					  			</div>
 					  			<div id="min-val">
-					  				
+					  				<span id="max-label" class="grid-label">Today's</br> Min Value</span></br>
+									<strong><span id="max-val"><?php echo $min_data; ?></span></strong>
 					  			</div>
 								
 							</div>
