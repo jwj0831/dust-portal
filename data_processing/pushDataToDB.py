@@ -104,6 +104,7 @@ mail_password = getMailUserPassword(curs)
 """
 ----------------------------------------
 """
+today_idi_num_dic['total']  = 0
 
 while 1 :
 	# Read the data from Serial Cable...
