@@ -58,9 +58,9 @@ def getStatDic(curs):
 		temp_dic['stat_id'] = int(results[0])
 		temp_dic['max_val'] = round(float(results[2]),2)
 		temp_dic['min_val'] = round(float(results[3]),2)
-		temp_dic['good_ratio'] = float(round(results[4]))
-		temp_dic['notbad_ratio'] = float(round(results[5]))
-		temp_dic['severe_ratio'] = float(round(results[6]))
+		temp_dic['good_ratio'] = int(results[4]))
+		temp_dic['notbad_ratio'] = int(results[5]))
+		temp_dic['severe_ratio'] = int(results[6]))
 		return max_data
 	else :
 		curs.execute( "INSERT INTO stat_data VALUES(default, now(), default, default, default, default, default)"  )
@@ -140,9 +140,9 @@ while 1 :
 			
 		today_idi_num_dic['total'] = today_idi_num_dic['total'] + 1	
 		
-		stat_dic['good_ratio'] = str( float( round( (today_idi_num_dic['good'] / today_idi_num_dic['total']) * 100)  ) )
-		stat_dic['notbad_ratio'] = str( float( round( (today_idi_num_dic['notbad'] / today_idi_num_dic['total']) * 100) ) )
-		stat_dic['severe_ratio'] = str( float( round( (today_idi_num_dic['severe'] / today_idi_num_dic['total']) * 100) ) )
+		stat_dic['good_ratio'] = str( int(  (today_idi_num_dic['good'] / today_idi_num_dic['total']) * 100)   )
+		stat_dic['notbad_ratio'] = str( int(  (today_idi_num_dic['notbad'] / today_idi_num_dic['total']) * 100)  )
+		stat_dic['severe_ratio'] = str( int( (today_idi_num_dic['severe'] / today_idi_num_dic['total']) * 100) )
 		
 		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s, severe_ratio = %s""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ))
 		
