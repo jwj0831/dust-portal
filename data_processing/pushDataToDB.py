@@ -108,7 +108,7 @@ mail_password = getMailUserPassword(curs)
 while 1 :
 	# Read the data from Serial Cable...
 	dustVal = ser.readline()
-	convVal = cdfloat(dustVal)
+	convVal = float(dustVal)
 	
 	# Insert Sensor Data to DB with indoor dust index(idi)
 	if start_cond_check_flag == True:
