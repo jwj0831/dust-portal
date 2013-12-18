@@ -52,7 +52,7 @@ def getStatDic(curs):
 	temp_dic['good_ratio'] = 0
 	temp_dic['notbad_ratio'] = 0
 	temp_dic['severe_ratio'] = 0
-	resultRow = curs.execute( 'SELECT * FROM stat_data WHERE day = now()  ORDER BY id DESC LIMIT 1' )
+	resultRow = curs.execute( 'SELECT * FROM stat_data ORDER BY day DESC LIMIT 1' )
 	if resultRow == 1:
 		results = curs.fetchone()
 		temp_dic['stat_id'] = int(results[0])
@@ -143,7 +143,7 @@ while 1 :
 		stat_dic['notbad_ratio'] = str( round( (today_idi_num_dic['notbad'] / today_idi_num_dic['total']) * 100) )
 		stat_dic['severe_ratio'] = str( round( (today_idi_num_dic['severe'] / today_idi_num_dic['total']) * 100) )
 		
-		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s, severe_ratio = %s WHERE id = %s""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] , stat_dic['stat_id'] ))
+		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s, severe_ratio = %s""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ))
 		
 		#Put data to DB
 		curs.execute( """INSERT INTO dust_data VALUES(default, default, %s, %s)""", (convVal, idi))
@@ -172,11 +172,11 @@ while 1 :
 		if convVal > stat_dic['max_val']:
 			stat_dic['max_val'] = convVal
 			convMaxVal = str(convVal)
-			curs.execute( """UPDATE stat_data SET max_val = %s WHERE id = %s""", (convMaxVal, stat_dic['stat_id'] ))
+			curs.execute( """UPDATE stat_data SET max_val = %s WHERE day = now()""", (convMaxVal))
 		elif stat_dic['min_val'] == 0 or convVal < stat_dic['min_val']:
 			stat_dic['min_val'] = convVal
 			convMinVal = str(convVal)
-			curs.execute( """UPDATE stat_data SET min_val = %s WHERE id = %s""", (convMinVal, stat_dic['stat_id'] ))
+			curs.execute( """UPDATE stat_data SET min_val = %s WHERE day = now() """, (convMinVal))
 			
 		db.commit()
 			

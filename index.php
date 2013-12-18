@@ -70,14 +70,14 @@ include ("header.php");
 							  		</div>
 								</div>
 							  	<strong>Not bad</strong>
-							  	<label id="not-bad-ratio-label" class="pull-right"></label>
+							  	<label id="notbad-ratio-label" class="pull-right"></label>
 								<div class="progress">
-							  		<div id="not-bad-progress-bar" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
-							    		<span id="not-bad-ratio-span" class="sr-only"></span>
+							  		<div id="notbad-progress-bar" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+							    		<span id="notbad-ratio-span" class="sr-only"></span>
 							  		</div>
 								</div>
 							  	<strong>Severe</strong>
-							  	<label id="severe-ratio-span" class="pull-right"></label>
+							  	<label id="severe-ratio-label" class="pull-right"></label>
 								<div class="progress">
 							  		<div id="severe-progress-bar" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
 							    		<span id="severe-ratio-span" class="sr-only"></span>
