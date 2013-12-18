@@ -13,6 +13,10 @@ $result = $mysqli->query("SELECT max_val, min_val, good_ratio, notbad_ratio, sev
 $obj = $result->fetch_object();
 $max_data = $obj->max_val;
 $min_data = $obj->min_val;
+$good_ratio = $obj->good_ratio;
+$notbad_ratio = $obj->good_ratio;
+$severe_ratio = $obj->good_ratio;
+
 
 $result->free();
 $mysqli->close();
