@@ -7,30 +7,57 @@
 	color: #463737;
 }
 
-.fa {
-	font-size: 120px;
-	margin-top: 10px;
-}
 
-.idi-string {
-	font-size: 50px;
-}
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 @media (max-width: 767px){
 	.footer{margin-top:20px;}
+	.fa {
+	font-size: 30px;
+	margin-top: 10px;
+	}
+	
+	.idi-string {
+		font-size: 20px;
+	}
+	.data-box {
+		font-size: 20px;
+	} 
+	
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
+	.fa {
+	font-size: 80px;
+	margin-top: 10px;
+	}
+	
+	.idi-string {
+		font-size: 30px;
+	}
+	.data-box {
+		font-size: 30px;
+	} 
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.fa {
+	font-size: 120px;
+	margin-top: 10px;
+	}
+	
+	.idi-string {
+		font-size: 50px;
+	}
+	.data-box {
+		font-size: 50px;
+	}
 }
 
 
@@ -39,9 +66,7 @@
 	/* background-color: #e8703e; */ /*Not Bad background color*/
 	font-weight: bold;
 }
-.data-box {
-	font-size: 50px;
-}
+
 #dust-info{
 
 }
