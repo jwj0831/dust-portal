@@ -63,7 +63,7 @@ def getStatDic(curs):
 		temp_dic['severe_ratio'] = int(results[6])
 		return max_data
 	else :
-		curs.execute( """INSERT INTO max_val, min_val, good_ratio, notbad_ratio, severe_ratio VALUES(default, now(), %s, %s, %s, %s, %s)""", ( stat_dic['max_val'], stat_dic['min_val'], stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ) )
+		curs.execute( """INSERT INTO max_val, min_val, good_ratio, notbad_ratio, severe_ratio VALUES(default, now(), %s, %s, %s, %s, %s)""", ( temp_dic['max_val'], temp_dic['min_val'], temp_dic['good_ratio'], temp_dic['notbad_ratio'], temp_dic['severe_ratio'] ) )
 		db.commit()
 		temp_dic['max_val'] = 0
 		temp_dic['min_val'] = 0
