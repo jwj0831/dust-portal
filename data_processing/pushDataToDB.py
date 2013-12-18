@@ -172,11 +172,11 @@ while 1 :
 		if convVal > stat_dic['max_val']:
 			stat_dic['max_val'] = convVal
 			convMaxVal = str(convVal)
-			curs.execute( """UPDATE stat_data SET max_val = %s WHERE day = now()""", (convMaxVal))
+			curs.execute( """UPDATE stat_data SET max_val = %s""", (convMaxVal))
 		elif stat_dic['min_val'] == 0 or convVal < stat_dic['min_val']:
 			stat_dic['min_val'] = convVal
 			convMinVal = str(convVal)
-			curs.execute( """UPDATE stat_data SET min_val = %s WHERE day = now() """, (convMinVal))
+			curs.execute( """UPDATE stat_data SET min_val = %s""", (convMinVal))
 			
 		db.commit()
 			
