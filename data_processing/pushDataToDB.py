@@ -143,7 +143,7 @@ while 1 :
 		stat_dic['notbad_ratio'] = str( round( (today_idi_num_dic['notbad'] / today_idi_num_dic['total']) * 100) )
 		stat_dic['severe_ratio'] = str( round( (today_idi_num_dic['severe'] / today_idi_num_dic['total']) * 100) )
 		
-		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s, severe_ratio = %s WHERE id = %s)""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] , stat_dic['stat_id'] ))
+		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s, severe_ratio = %s WHERE id = %s""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] , stat_dic['stat_id'] ))
 		
 		#Put data to DB
 		curs.execute( """INSERT INTO dust_data VALUES(default, default, %s, %s)""", (convVal, idi))
