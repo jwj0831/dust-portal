@@ -47,11 +47,11 @@ def checkBeforeData(curs):
 def getStatDic(curs):
 	temp_dic = {}
 	temp_dic['stat_id'] = 0
-	temp_dic['max_val'] = "0"
-	temp_dic['min_val'] = "0"
-	temp_dic['good_ratio'] = "0"
-	temp_dic['notbad_ratio'] = "0"
-	temp_dic['severe_ratio'] = "0"
+	temp_dic['max_val'] = 0
+	temp_dic['min_val'] = 0
+	temp_dic['good_ratio'] = 0
+	temp_dic['notbad_ratio'] = 0
+	temp_dic['severe_ratio'] = 0
 	resultRow = curs.execute( 'SELECT * FROM stat_data WHERE day = now()' )
 	if resultRow == 1:
 		results = curs.fetchone()
@@ -63,13 +63,8 @@ def getStatDic(curs):
 		temp_dic['severe_ratio'] = int(results[6])
 		return max_data
 	else :
-		curs.execute( """INSERT INTO day, max_val, min_val, good_ratio, notbad_ratio, severe_ratio VALUES(default, now(), %s, %s, %s, %s, %s)""", ( temp_dic['max_val'], temp_dic['min_val'], temp_dic['good_ratio'], temp_dic['notbad_ratio'], temp_dic['severe_ratio'] ) )
+		curs.execute( """INSERT INTO VALUES(default, now(), default, default, default, default, default)"""  )
 		db.commit()
-		temp_dic['max_val'] = 0
-		temp_dic['min_val'] = 0
-		temp_dic['good_ratio'] = 0
-		temp_dic['notbad_ratio'] = 0
-		temp_dic['severe_ratio'] = 0
 		
 		return temp_dic
 	
@@ -164,14 +159,14 @@ while 1 :
 	newDay = newDayFormat.day
 	
 	if currentDay != newDay:
-		stat_dic['max_val'] = "0"
-		stat_dic['min_val'] = "0"
-		stat_dic['good_ratio'] = "0"
-		stat_dic['notbad_ratio'] = "0"
-		stat_dic['severe_ratio'] = "0"
+		stat_dic['max_val'] = 0
+		stat_dic['min_val'] = 0
+		stat_dic['good_ratio'] = 0
+		stat_dic['notbad_ratio'] = 0
+		stat_dic['severe_ratio'] = 0
 		currentDay = newDay
-		curs.execute( """INSERT INTO day, max_val, min_val, good_ratio, notbad_ratio, severe_ratio VALUES(default, now(), %s, %s, %s, %s, %s)""", ( stat_dic['max_val'], stat_dic['min_val'], stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ) )
-	
+		curs.execute( """INSERT INTO VALUES(default, now(), default, default, default, default, default)"""  )
+		
 	if currentDay == newDay:
 		if convVal > stat_dic['max_val']:
 			stat_dic['max_val'] = convVal
