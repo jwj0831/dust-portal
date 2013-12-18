@@ -157,6 +157,10 @@ include ("header.php");
 														"background-repeat" : "repeat-x"
 														});
 					}
+					
+					jQuery("#good-ratio-label").text(<?php echo $good_ratio."%" ;?>);
+					jQuery("#notbad-ratio-label").text(<?php echo $notbad_ratio."%" ;?>);
+					jQuery("#severe-ratio-label").text(<?php echo $severe_ratio."%" ;?>);
 				});
 		</script>
 	</body>
