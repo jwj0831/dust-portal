@@ -61,7 +61,7 @@ def getStatDic(curs):
 		temp_dic['good_ratio'] = int(results[4])
 		temp_dic['notbad_ratio'] = int(results[5])
 		temp_dic['severe_ratio'] = int(results[6])
-		return max_data
+		return temp_dic
 	else :
 		curs.execute( "INSERT INTO stat_data VALUES(default, now(), default, default, default, default, default)"  )
 		db.commit()
