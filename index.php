@@ -1,7 +1,7 @@
 <?php
 include ("config.inc.php");
 
-$result = $mysqli->query("SELECT raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 0, 1");
+$result = $mysqli->query("SELECT raw_data, idi_data FROM dust_data ORDER BY id DESC LIMIT 1");
 $obj = $result->fetch_object();
 
 $raw_data = $obj->raw_data;
@@ -9,7 +9,7 @@ $idi = $obj->idi_data;
 
 $result->free();
 
-$result = $mysqli->query("SELECT max_val FROM max_data ORDER BY id DESC LIMIT 0, 1");
+$result = $mysqli->query("SELECT max_val FROM stat_data ORDER BY id DESC LIMIT 1");
 $obj = $result->fetch_object();
 $max_data = $obj->max_val;
 
