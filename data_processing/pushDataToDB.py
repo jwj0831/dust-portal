@@ -104,7 +104,6 @@ mail_password = getMailUserPassword(curs)
 """
 ----------------------------------------
 """
-today_idi_num_dic['total']  = 0
 
 while 1 :
 	# Read the data from Serial Cable...
@@ -144,9 +143,9 @@ while 1 :
 			
 		today_idi_num_dic['total'] = today_idi_num_dic['total'] + 1	
 		
-		stat_dic['good_ratio'] = str( int(  ( today_idi_num_dic['good'] / today_idi_num_dic['total']) * 100)   )
-		stat_dic['notbad_ratio'] = str( int(  ( today_idi_num_dic['notbad'] / today_idi_num_dic['total'] ) * 100)  )
-		stat_dic['severe_ratio'] = str( int( ( today_idi_num_dic['severe'] / today_idi_num_dic['total'] ) * 100) )
+		stat_dic['good_ratio'] = str( int(  ( today_idi_num_dic['good'] / float(today_idi_num_dic['total']) ) * 100)   )
+		stat_dic['notbad_ratio'] = str( int(  ( today_idi_num_dic['notbad'] / float(today_idi_num_dic['total']) ) * 100)  )
+		stat_dic['severe_ratio'] = str( int( ( today_idi_num_dic['severe'] / float(today_idi_num_dic['total']) ) * 100) )
 		
 		curs.execute( """UPDATE stat_data SET good_ratio = %s, notbad_ratio = %s, severe_ratio = %s""", (stat_dic['good_ratio'], stat_dic['notbad_ratio'], stat_dic['severe_ratio'] ))
 		
